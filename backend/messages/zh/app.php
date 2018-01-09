@@ -91,6 +91,8 @@ return [
     /*Article*/
     'Category Id' => '分类ID',
     'Category' => '分类',
+    'LCategory'=>'视频分类',
+    'LCategory Id' => '视频分类ID',
     'Title' => '标题',
     'Sub Title' => '副标题',
     'Summary' => '概述',

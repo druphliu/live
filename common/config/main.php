@@ -1,6 +1,6 @@
 <?php
 $config = [
-    'name' => 'Feehi CMS',
+    'name' => '直播系统',
     'version' => '2.0.0',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [

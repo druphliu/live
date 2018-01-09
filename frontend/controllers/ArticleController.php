@@ -58,7 +58,7 @@ class ArticleController extends Controller
             $cat = yii::$app->getRequest()->getPathInfo();
         }
         $where = ['type' => Article::ARTICLE, 'status' => Article::ARTICLE_PUBLISHED];
-        if ($cat != '' && $cat != 'index') {
+        if ($cat != '' && $cat != 'index'&&$cat!='index.html') {
             if ($cat == yii::t('app', 'uncategoried')) {
                 $where['cid'] = 0;
             } else {

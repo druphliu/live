@@ -36,7 +36,7 @@ return [
                     ],
                     'message' => [
                         'to' => ['admin@feehi.com', 'liufee@126.com'],
-                        'subject' => '来自 Feehi CMS api的新日志消息',
+                        'subject' => '来自  api的新日志消息',
                     ],
                 ],
             ],

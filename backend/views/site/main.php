@@ -86,7 +86,7 @@ use yii\helpers\Url;
                             }
                         </style>
                         <li class="list-group-item">
-                            <span class="badge badge-primary">&nbsp;&nbsp;</span><strong>Feehi CMS</strong>: <?= yii::$app->getVersion() ?>
+                            <span class="badge badge-primary">&nbsp;&nbsp;</span><strong>管理后台</strong>: <?= yii::$app->getVersion() ?>
                         </li>
                         <li class="list-group-item ">
                             <span class="badge badge-info">&nbsp;&nbsp;</span> <strong>Web Server</strong>: <?= $info['OPERATING_ENVIRONMENT'] ?>
