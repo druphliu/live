@@ -14,11 +14,11 @@ use common\models\LCategory;
 use common\models\PlatformCategoryAlisa;
 use yii\helpers\Json;
 
-class Douyu extends LiveSpider
+class Zhanqi extends LiveSpider
 {
     const CATEGORY_URL ='http://open.douyucdn.cn/api/RoomApi/game';
     const LIST_URL = 'http://open.douyucdn.cn/api/RoomApi/live/%s?limit=100&offset=%d';
-    const ROOM_URL = 'http://open.douyucdn.cn/api/RoomApi/room/%s';
+    const ROOM_URL = 'https://www.zhanqi.tv/api/static/v2.1/room/domain/%s.json';
     /**
      * 抓取分类
      * @return mixed
@@ -34,7 +34,7 @@ class Douyu extends LiveSpider
             foreach ($result as $d){
                 $data[]=[
                     'name'=>$d['game_name'],
-                    'icon'=>$d['game_src'],
+                    'icon'=>$d['game_icon'],
                     'alias'=>$d['short_name']
                 ];
             }

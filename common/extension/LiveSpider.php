@@ -16,6 +16,10 @@ abstract class LiveSpider
     public function __construct()
     {
         $this->snoopy = new Snoopy();
+        $this->snoopy->headers=[
+            'Host'=>'www.quanmin.tv',
+            'User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36'
+        ];
     }
 
     /**
@@ -28,11 +32,11 @@ abstract class LiveSpider
      * 抓取列表
      * @return mixed
      */
-    abstract function spiderList();
+    abstract function spiderList($cid);
 
     /**
      * 抓取直播间数据
      * @return mixed
      */
-    abstract function spiderRoom();
+    abstract function spiderRoom($roomid);
 }
