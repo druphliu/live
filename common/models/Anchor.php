@@ -2,6 +2,8 @@
 
 namespace common\models;
 
+use common\models\meta\AnchorMetaLike;
+use common\models\meta\AnchorMetaTag;
 use Yii;
 
 /**
@@ -72,4 +74,19 @@ class Anchor extends \yii\db\ActiveRecord
             'title'=>'标题'
         ];
     }
+    public function getCategory()
+    {
+        /**
+         * 第一个参数为要关联的字表模型类名称，
+         *第二个参数指定 通过子表的 customer_id 去关联主表的 id 字段
+         */
+        return $this->hasOne(LCategory::className(), ['id' => 'l_cid']);
+    }
+
+    public function getAnchorTags()
+    {
+        $tempModel = new AnchorMetaTag();
+        return $this->hasMany(AnchorMetaLike::className(), ['aid' => 'id'])->where(['key'=>$tempModel->keyName]);
+    }
+
 }

@@ -96,15 +96,15 @@ class SpiderController extends \yii\console\Controller
                     continue;
 
             }
-            $model = PlatformCategoryAlisa::find()->where(['l_category_id' => $category->id, 'platform_id' => $this->platfromId, 'alisa' => $category->alias])->one();
+            $model = PlatformCategoryAlisa::find()->where(['l_category_id' => $category->id, 'platform_id' => $this->platfromId, 'alisa' => $l['alias']])->one();
             if ($model)
                 continue;
             $model = new PlatformCategoryAlisa();
             $model->l_category_id = $category->id;
             $model->platform_id = $this->platfromId;
-            $model->alisa = $category->alias;
+            $model->alisa = $l['alias'];
             $model->save();
-            echo 'success' . $category->alias . "\n";
+            echo 'success' . $l['alias'] . "\n";
         }
     }
 

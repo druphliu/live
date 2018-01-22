@@ -8,9 +8,9 @@
 
 namespace backend\controllers;
 
+use backend\models\Anchor;
+use backend\models\search\AnchorSearch;
 use yii;
-use backend\models\Article;
-use backend\models\search\ArticleSearch;
 use backend\actions\CreateAction;
 use backend\actions\UpdateAction;
 use backend\actions\IndexAction;
@@ -27,7 +27,7 @@ class AnchorController extends \yii\web\Controller
             'index' => [
                 'class' => IndexAction::className(),
                 'data' => function(){
-                    $searchModel = new ArticleSearch(['scenario' => 'article']);
+                    $searchModel = new AnchorSearch(['scenario' => 'anchor']);
                     $dataProvider = $searchModel->search(yii::$app->getRequest()->getQueryParams());
                     return [
                         'dataProvider' => $dataProvider,
@@ -37,25 +37,25 @@ class AnchorController extends \yii\web\Controller
             ],
             'create' => [
                 'class' => CreateAction::className(),
-                'modelClass' => Article::className(),
+                'modelClass' => Anchor::className(),
                 'scenario' => 'article',
             ],
             'update' => [
                 'class' => UpdateAction::className(),
-                'modelClass' => Article::className(),
+                'modelClass' => Anchor::className(),
                 'scenario' => 'article',
             ],
             'view-layer' => [
                 'class' => ViewAction::className(),
-                'modelClass' => Article::className(),
+                'modelClass' => Anchor::className(),
             ],
             'delete' => [
                 'class' => DeleteAction::className(),
-                'modelClass' => Article::className(),
+                'modelClass' => Anchor::className(),
             ],
             'sort' => [
                 'class' => SortAction::className(),
-                'modelClass' => Article::className(),
+                'modelClass' => Anchor::className(),
             ],
         ];
     }
