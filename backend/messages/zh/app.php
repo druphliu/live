@@ -42,6 +42,8 @@ return [
     'Not Audited' => '待审核',
     'Passed' => '通过',
     'Unpassed' => '未通过',
+    'Online'=>'在线',
+    'Offline'=>'离线',
     'first' => '首页',
     'previous' => '上一页',
     'next' => '下一页',

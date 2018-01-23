@@ -1,44 +1,31 @@
 <?php
-/**
- * Author: druphliu
- * Description
- * Email: druphliu@gmail.com
- * Created at: 2017-03-15 21:16
- */
 
 namespace common\models;
 
-use Yii;
 use common\helpers\FamilyTree;
-use yii\behaviors\TimestampBehavior;
-use yii\helpers\ArrayHelper;;
+use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
- * This is the model class for table "{{%category}}".
+ * This is the model class for table "{{%s_category}}".
  *
- * @property string $id
- * @property string $name
- * @property string $sort
- * @property string $created_at
- * @property string $updated_at
- * @property string $remark
+ * @property integer $id
  * @property integer $parent_id
+ * @property string $name
+ * @property string $alias
+ * @property integer $sort
+ * @property string $remark
+ * @property integer $created_at
+ * @property integer $updated_at
  */
-class LCategory extends \yii\db\ActiveRecord
+class SCategory extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%l_category}}';
-    }
-
-    public function behaviors()
-    {
-        return [
-            TimestampBehavior::className(),
-        ];
+        return '{{%s_category}}';
     }
 
     /**
@@ -47,11 +34,9 @@ class LCategory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sort', 'parent_id', 'created_at', 'updated_at'], 'integer'],
-            [['sort'], 'compare', 'compareValue' => 0, 'operator' => '>='],
+            [['parent_id', 'sort', 'created_at', 'updated_at'], 'integer'],
+            [['name', 'alias', 'created_at'], 'required'],
             [['name', 'alias', 'remark'], 'string', 'max' => 255],
-            [['alias'],  'match', 'pattern' => '/^[a-zA-Z0-9_]+$/', 'message' => yii::t('app', 'Only includes alphabet,_,and number')],
-            [['name', 'alias'], 'required'],
         ];
     }
 
@@ -61,14 +46,14 @@ class LCategory extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'parent_id' => Yii::t('app', 'Category Id'),
-            'name' => Yii::t('app', 'Name'),
-            'alias' => Yii::t('app', 'Alias'),
-            'sort' => Yii::t('app', 'Sort'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
-            'remark' => Yii::t('app', 'Remark'),
+            'id' => 'ID',
+            'parent_id' => 'Parent ID',
+            'name' => 'Name',
+            'alias' => 'Alias',
+            'sort' => 'Sort',
+            'remark' => 'Remark',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 
@@ -231,5 +216,4 @@ class LCategory extends \yii\db\ActiveRecord
         }
         return json_decode(file_get_contents($file), true);
     }
-
 }

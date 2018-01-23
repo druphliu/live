@@ -27,6 +27,7 @@ use Yii;
  * @property integer $created_at
  * @property integer $updated_at
  * @property integer $started_at
+ * @property string $snapshot
  */
 class Anchor extends \yii\db\ActiveRecord
 {
@@ -47,7 +48,7 @@ class Anchor extends \yii\db\ActiveRecord
             [['l_cid', 'platform_id', 'p_c_a_id', 'is_online', 'status', 'third_hn', 'hn', 'created_at', 'updated_at','room_id','started_at'], 'integer'],
             [['created_at'], 'required'],
             [['l_cname'], 'string', 'max' => 150],
-            [['platfrom_name', 'room_url', 'anchor_name','title','avatar'], 'string', 'max' => 255],
+            [['platfrom_name', 'room_url', 'anchor_name','title','avatar','snapshot'], 'string', 'max' => 255],
         ];
     }
 

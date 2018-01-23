@@ -93,6 +93,7 @@ class Zhanqi extends LiveSpider
                 $data['is_online'] = $result['chatStatus']==1?1:0;
                 $data['started_at'] = $result['liveTime'];
                 $data['third_hn'] = $result['firepower'];
+                $data['snapshot']=$result['bpic'];
             }
         }
         return $data;

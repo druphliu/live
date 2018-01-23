@@ -88,6 +88,18 @@ class Constants
         return self::getItems($items, $key);
     }
 
+    const STATUS_ONLINE = 1;
+    const STATUS_OFFLINE = 0;
+
+    public static function getAnchorStatus($key = null)
+    {
+        $items = [
+            self::STATUS_ONLINE => yii::t('app', 'Online'),
+            self::STATUS_OFFLINE => yii::t('app', 'Offline'),
+        ];
+        return self::getItems($items, $key);
+    }
+
     const INPUT_INPUT = 1;
     const INPUT_TEXTAREA = 2;
     const INPUT_UEDITOR = 3;
