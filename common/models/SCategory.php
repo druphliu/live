@@ -205,12 +205,12 @@ class SCategory extends \yii\db\ActiveRecord
             $data[$url] = 'article/index';
         }
         $json = json_encode($data);
-        file_put_contents(yii::getAlias('@frontend/runtime/cache/lcategory.txt'), $json);
+        file_put_contents(yii::getAlias('@frontend/runtime/cache/scategory.txt'), $json);
     }
 
     public static function getUrlRules()
     {
-        $file = yii::getAlias('@frontend/runtime/cache/lcategory.txt');
+        $file = yii::getAlias('@frontend/runtime/cache/scategory.txt');
         if( !file_exists($file) ){
             self::_generateUrlRules();
         }

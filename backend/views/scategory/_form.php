@@ -12,7 +12,7 @@
  */
 
 use backend\widgets\ActiveForm;
-use common\models\LCategory;
+use common\models\SCategory;
 
 $this->title = "Category";
 $parent_id = yii::$app->getRequest()->get('parent_id', '');
@@ -28,7 +28,7 @@ if ($parent_id != '') {
                 <?php $form = ActiveForm::begin(); ?>
                 <?= $form->field($model, 'parent_id')
                     ->label(yii::t('app', 'Parent Id'))
-                    ->dropDownList(LCategory::getCategoriesName()) ?>
+                    ->dropDownList(SCategory::getCategoriesName()) ?>
                 <div class="hr-line-dashed"></div>
                 <?= $form->field($model, 'name')->textInput(['maxlength' => 64]) ?>
                 <div class="hr-line-dashed"></div>
