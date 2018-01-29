@@ -102,6 +102,7 @@ class Douyu extends LiveSpider
                 $data['is_online'] = $result['room_status']==1?1:0;
                 $data['started_at'] = strtotime($result['start_time']);
                 $data['third_hn'] = $result['hn'];
+                $data['snapshot'] = $result['room_thumb'];
             }
         }
         return $data;
