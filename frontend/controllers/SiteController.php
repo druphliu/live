@@ -8,6 +8,10 @@
 
 namespace frontend\controllers;
 
+use frontend\models\Activity;
+use frontend\models\Anchor;
+use frontend\models\Article;
+use frontend\models\Lcategory;
 use Yii;
 use common\models\LoginForm;
 use frontend\models\form\PasswordResetRequestForm;
@@ -187,6 +191,22 @@ class SiteController extends Controller
             Yii::$app->session['view'] = $view;
         }
         $this->goBack( Yii::$app->getRequest()->getHeaders()->get('referer') );
+    }
+
+    /**
+     * 首页
+     * @return string
+     */
+    public function actionIndex(){
+        $list = Article::find()
+            ->with('category')
+            ->where(['flag_headline'=>1])
+            ->orderBy('id desc')
+            ->limit(5)->asArray()->all();
+        $category = Lcategory::find()->where(['is_hot'=>1])->orderBy('sort asc')->asArray()->limit(10)->all();
+        $live = Anchor::find()->where(['flag_headline'=>1])->limit(12)->asArray()->all();
+        $activity = Activity::find()->where(['flag_headline'=>1])->limit(3)->asArray()->all();
+        return $this->renderPartial('index',['news'=>$list,'category'=>$category,'live'=>$live,'activity'=>$activity]);
     }
 
     /**

@@ -16,9 +16,9 @@ use frontend\models\Menu;
 class MenuView extends \yii\base\Widget
 {
 
-    public $template = "<ul class=\"down-menu nav-menu\">{lis}</ul>";
+    public $template = "<ul class=\"nav-list clearfix\">{lis}</ul>";
 
-    public $liTemplate = "<li id='menu-item-{menu_id}' class='menu-item menu-item-type-taxonomy menu-item-object-category {current_menu_class} menu-item-{menu_id}'><a href='{url}' target='{target}' style='padding: 13px;'>{title}</a>{sub_menu}</li>";
+    public $liTemplate = "<li id='menu-item-{menu_id}' class='menu-item menu-item-type-taxonomy menu-item-object-category {current_menu_class} menu-item-{menu_id}'><a href='{url}' target='{target}' '>{title}</a>{sub_menu}</li>";
 
     public $subTemplate = "<ul class=\"sub-menu\" style=\"padding-top: 20px;\">{lis}</ul>";
 

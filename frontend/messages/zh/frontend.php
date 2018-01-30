@@ -9,7 +9,7 @@
 return [
     /*public*/
     'Hi, Log in' => 'Hi, 请登录',
-    'Log out' => '退出登陆',
+    'Log out' => '退出',
     'Sign up' => '注册',
     'About us' => '关于我们',
     'Contact us' => '联系我们',

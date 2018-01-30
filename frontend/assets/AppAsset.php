@@ -12,14 +12,14 @@ class AppAsset extends \yii\web\AssetBundle
 {
 
     public $css = [
-        'static/css/style.css',
-        'static/plugins/toastr/toastr.min.css',
+        'static/css/common.css',
+        'static/css/bootstrap.min.css',
     ];
 
     public $js = [
-        'static/js/jquery.min.js',
-        'static/js/index.js',
-        'static/plugins/toastr/toastr.min.js',
+        'static/js/jquery-1.11.2.min.js',
+        'static/js/public.js',
+        'static/js/bootstrap.min.js',
     ];
 
 }

@@ -57,9 +57,9 @@ return [
                 //'detail/<id:\d+>' => 'site/detail?id=$id',
                 //'post/22'=>'site/detail',
                 //'<controller:detail>/<id:\d+>' => '<controller>/index',
-                'index'=> 'article/index',
-                '' => 'article/index',
-                '<page:\d+>' => 'article/index',
+                'index'=> 'site/index',
+                'news' => 'news/index',
+                'game'=>'game/index',
                 'login' => 'site/login',
                 'signup' => 'site/signup',
                 'view/<id:\d+>' => 'article/view',
@@ -103,31 +103,45 @@ return [
                 ],
                 frontend\assets\AppAsset::className() => [
                     'css' => [
-                        'a' => 'static/css/style.css',
-                        'b' => 'static/plugins/toastr/toastr.min.css',
+                        'a' => 'static/css/common.css',
+                       // 'b' => 'static/plugins/toastr/toastr.min.css',
+                        'c'=> 'static/css/bootstrap.min.css',
+                        'b'=>'static/css/index.css',
                     ],
                     'js' => [
-                        'a' => 'static/js/jquery.min.js',
-                        'b' => 'static/js/index.js',
-                        'c' => 'static/plugins/toastr/toastr.min.js',
+                        'a' => 'static/js/jquery-1.11.2.min.js',
+                       // 'b' => 'static/js/index.js',
+                        'c' => 'static/js/public.js',
+                        'd'=> 'static/js/bootstrap.min.js',
                     ],
                 ],
                 frontend\assets\IndexAsset::className() => [
+                    'css'=>[
+
+                    ],
                     'js' => [
                         'a' => 'static/js/responsiveslides.min.js',
                     ]
                 ],
-                frontend\assets\ViewAsset::className() => [
-                    'css' => [
-                        'a' => 'static/syntaxhighlighter/styles/shCoreDefault.css'
+                frontend\assets\NewsAsset::className() => [
+                    'css'=>[
+                        'a'=>['static/css/swiper-3.4.0.min.css']
                     ],
                     'js' => [
-                        'a' => 'static/syntaxhighlighter/scripts/shCore.js',
+                        'a' => 'static/js/swiper-3.4.0.min.js',
+                    ]
+                ],
+                frontend\assets\ViewAsset::className() => [
+                    'css' => [
+                       // 'a' => 'static/syntaxhighlighter/styles/shCoreDefault.css'
+                    ],
+                    'js' => [
+                       /* 'a' => 'static/syntaxhighlighter/scripts/shCore.js',
                         'b' => 'static/syntaxhighlighter/scripts/shBrushJScript.js',
                         'c' => 'static/syntaxhighlighter/scripts/shBrushPython.js',
                         'd' => 'static/syntaxhighlighter/scripts/shBrushPhp.js',
                         'e' => 'static/syntaxhighlighter/scripts/shBrushJava.js',
-                        'f' =>'static/syntaxhighlighter/scripts/shBrushCss.js',
+                        'f' =>'static/syntaxhighlighter/scripts/shBrushCss.js',*/
                     ]
                 ],
             ]

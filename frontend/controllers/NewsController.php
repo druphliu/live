@@ -24,7 +24,7 @@ use yii\helpers\Url;
 use yii\web\Response;
 use yii\web\XmlResponseFormatter;
 
-class ArticleController extends Controller
+class NewsController extends Controller
 {
 
 
@@ -58,7 +58,7 @@ class ArticleController extends Controller
             $cat = yii::$app->getRequest()->getPathInfo();
         }
         $where = ['type' => Article::ARTICLE, 'status' => Article::ARTICLE_PUBLISHED];
-        if ($cat != '' && $cat != 'index'&&$cat!='index.html') {
+        if ($cat != '' && $cat != 'news'&&$cat!='news.html') {
             if ($cat == yii::t('app', 'uncategoried')) {
                 $where['cid'] = 0;
             } else {
