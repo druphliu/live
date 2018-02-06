@@ -37,7 +37,7 @@ class SearchController extends Controller
                 ]
             ]
         ]);
-        return $this->render('/article/index', [
+        return $this->render('/news/index', [
             'dataProvider' => $dataProvider,
             'type' => yii::t('frontend', 'Search keyword {keyword} results', ['keyword'=>$keyword]),
         ]);
@@ -58,9 +58,13 @@ class SearchController extends Controller
                 ]
             ]
         ]);
-        return $this->render('/article/index', [
+        $top = Article::find()->limit(1)->where(['flag_headline'=>1])->andWhere('thumb<>""')->limit(2)->with('category')->orderBy("sort asc")->asArray()->all();
+        $roll = components\Article::getArticleLists(['flag_roll' => 1], 8);
+        return $this->render('/news/index', [
             'dataProvider' => $dataProvider,
-            'type' => yii::t('frontend', 'Tag {tag} related articles', ['tag'=>$tag]),
+            'top'=>$top,
+            'roll'=>$roll,
+            'type' => yii::t('frontend', '{tag}', ['tag'=>$tag]),
         ]);
     }
 }

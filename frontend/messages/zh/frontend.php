@@ -23,6 +23,7 @@ return [
     'Remember Me' => '记住登陆',
     'Well-choosen' => '精选导读',
     'Latest Articles' => '最新发布',
+    'Latest Anchor'=>'全部直播',
     'Related Recommends' => '相关推荐',
     'Reproduced please indicate the source' => '转载请注明',
     'Post my comment' => '发表我的评论',

@@ -87,7 +87,7 @@ class Zhanqi extends LiveSpider
         $result = $this->snoopy->results;
         if($result){
             $result = Json::decode($result);
-            if(isset($result['error']) && $result['error']==0){
+            if(isset($result['code']) && $result['code']==0){
                 $result = $result['data'];
                 $data['avatar'] = $result['avatar'];
                 $data['is_online'] = $result['chatStatus']==1?1:0;

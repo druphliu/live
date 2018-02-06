@@ -18,6 +18,8 @@ use Yii;
  */
 class Goods extends \yii\db\ActiveRecord
 {
+    const GOODS_PUBLISHED=1;
+
     /**
      * @inheritdoc
      */

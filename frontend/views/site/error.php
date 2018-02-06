@@ -15,7 +15,7 @@ use yii\helpers\Html;
 
 $this->title = $name;
 ?>
-<div class="content-wrap">
+<div class="content">
     <div style="text-align:center;padding:10px 0;font-size:16px;background-color:#ffffff;height: 460px">
         <h2 style="font-size:36px;margin-bottom:10px;"><?= Html::encode($this->title) ?></h2>
         <p align="center"><?= nl2br(Html::encode($message)) ?></p>

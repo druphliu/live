@@ -20,6 +20,8 @@ use Yii;
  */
 class Activity extends \yii\db\ActiveRecord
 {
+    const ACTIVITY_PUBLISHED=1;
+
     /**
      * @inheritdoc
      */

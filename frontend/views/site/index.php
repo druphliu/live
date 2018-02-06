@@ -10,6 +10,7 @@
 
 /* @var $content string */
 
+use common\helpers\StringHelper;
 use common\models\Options;
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
@@ -33,7 +34,7 @@ use frontend\widgets\MenuView;
     </head>
     <?php $this->beginBody() ?>
     <body>
-     <div class="section01" >
+     <div class="section01 index" >
          <?php $ad = Options::getAdByName('index_back')?>
          <a href="<?=$ad->link?>" target="<?=$ad->target?>" title="<?=$ad->desc?>">
              <img src="<?=$ad->ad?>" alt="<?=$ad->desc?>"  class="banner">
@@ -72,7 +73,7 @@ use frontend\widgets\MenuView;
                         <ul>
                             <?php foreach ($news as $i=>$new){?>
                             <?php if($i==0){?>
-                                    <a href="<?= Url::to(['news/view',['id'=>$new['id']]])?>" target="_blank"><p class="font list-box-tit"><?= $new['title']?></p></a>
+                                    <a href="<?= Url::to(['news/view',['id'=>$new['id']]])?>" target="_blank"><p class="font list-box-tit"><?= StringHelper::truncate($new['title'],15)?></p></a>
                             <?php }else{?>
                             <li>
                                 <p class="news-tit">
@@ -203,154 +204,57 @@ use frontend\widgets\MenuView;
                 <div class="game-live-title">
                     <div class="title clearfix">
                         <span class="font js_nav-list"><img src="/static/images/game.png">热门游戏</span>
-                        <span class="font js_nav-list"><img src="/static/images/game.png">热门直播</span>
-                        <a href="#" class="more">更多>></a>
+                        <a href="<?=Url::to(['game/index'])?>" class="more">更多>></a>
                     </div>
                     <div class="game-live-list js_news-deta">
                         <ul class="clearfix">
+                            <?php foreach ($hot_live as $h){?>
                             <li>
-                                <a href="#">
+                                <a href="<?= Url::to(['live/view','id'=>$h['id']])?>">
                                     <div class="play-ico">
-                                        <img src="/static/images/img2.png">
+                                        <img src="<?= $h['snapshot']?>">
                                         <i class="play-icon"></i>
                                     </div>
                                     <div class="game-live-txt clearfix">
-                                        <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                        <p class="game-type">类型名称</p>
-                                        <p class="game-name">主播名称</p>
-                                        <p class="game-hot"><img src="/static/images/hot.png">222222</p>
+                                        <p class="game-title"><?= $h['title']?></p>
+                                        <p class="game-type"><?= $h['l_cname']?></p>
+                                        <p class="game-name"><?= $h['anchor_name']?></p>
+                                        <p class="game-hot"><img src="/static/images/hot.png"><?= $h['hn']?></p>
                                     </div>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <div class="play-ico">
-                                        <img src="/static/images/img2.png">
-                                        <i class="play-icon"></i>
-                                    </div>
-                                    <div class="game-live-txt clearfix">
-                                        <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                        <p class="game-type">类型名称</p>
-                                        <p class="game-name">主播名称</p>
-                                        <p class="game-hot"><img src="/static/images/hot.png">222222</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="play-ico">
-                                        <img src="/static/images/img2.png">
-                                        <i class="play-icon"></i>
-                                    </div>
-                                    <div class="game-live-txt clearfix">
-                                        <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                        <p class="game-type">类型名称</p>
-                                        <p class="game-name">主播名称</p>
-                                        <p class="game-hot"><img src="/static/images/hot.png">222222</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="play-ico">
-                                        <img src="/static/images/img2.png">
-                                        <i class="play-icon"></i>
-                                    </div>
-                                    <div class="game-live-txt clearfix">
-                                        <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                        <p class="game-type">类型名称</p>
-                                        <p class="game-name">主播名称</p>
-                                        <p class="game-hot"><img src="/static/images/hot.png">222222</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="play-ico">
-                                        <img src="/static/images/img2.png">
-                                        <i class="play-icon"></i>
-                                    </div>
-                                    <div class="game-live-txt clearfix">
-                                        <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                        <p class="game-type">类型名称</p>
-                                        <p class="game-name">主播名称</p>
-                                        <p class="game-hot"><img src="/static/images/hot.png">222222</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="play-ico">
-                                        <img src="/static/images/img2.png">
-                                        <i class="play-icon"></i>
-                                    </div>
-                                    <div class="game-live-txt clearfix">
-                                        <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                        <p class="game-type">类型名称</p>
-                                        <p class="game-name">主播名称</p>
-                                        <p class="game-hot"><img src="/static/images/hot.png">222222</p>
-                                    </div>
-                                </a>
-                            </li>
+                            <?php }?>
                         </ul>
                     </div>
-                    <div class="game-live-list js_news-deta">22</div>
+
                 </div>
             </div>
             <div class="level-box">
                 <div class="level-box-title">
                     <div class="title clearfix">
                         <span class="font"><img src="/static/images/level.png">排行榜</span>
-                        <a href="#" class="more">更多>></a>
+                        <a href="<?=Url::to(['top/index'])?>" class="more">更多>></a>
                     </div>
                 </div>
                 <div class="level-list">
                     <ul>
+                    <?php foreach ($top as $i=>$model){$i++;?>
                         <li>
-                            <span class="one">1</span>
-                            <a href="#">
+                            <span class="<?php if($i==1){?>one<?php }?>"><?= $i ?></span>
+                            <a href="<?= Url::to(['live/view','id'=>$model->id])?>">
                                 <div class="level-list-li clearfix">
                                     <div class="min-live-list">
-                                        <i></i>
+                                        <i><img src="<?= $model->avatar?>"> </i>
                                     </div>
                                     <div class="min-live-txt">
-                                        <p>主播1</p>
-                                        <span>直播平台&nbsp;战队&nbsp;赛季</span>
+                                        <p><?= $model->anchor_name?></p>
+                                        <span><?= $model->platfrom_name?></span>
                                     </div>
                                 </div>
                             </a>
-                            <a href="#"><img src="/static/images/rig.png" class="rig"></a>
+                            <a href="<?= Url::to(['live/view','id'=>$model->id])?>"><img src="/static/images/rig.png" class="rig"></a>
                         </li>
-                        <li>
-                            <span>2</span>
-                            <a href="#">
-                                <div class="level-list-li clearfix">
-                                    <div class="min-live-list">
-                                        <i></i>
-                                    </div>
-                                    <div class="min-live-txt">
-                                        <p>主播2</p>
-                                        <span>直播平台&nbsp;战队&nbsp;赛季</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#"><img src="/static/images/rig.png" class="rig"></a>
-                        </li>
-                        <li>
-                            <span>3</span>
-                            <a href="#">
-                                <div class="level-list-li clearfix">
-                                    <div class="min-live-list">
-                                        <i></i>
-                                    </div>
-                                    <div class="min-live-txt">
-                                        <p>主播3</p>
-                                        <span>直播平台&nbsp;战队&nbsp;赛季</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#"><img src="/static/images/rig.png" class="rig"></a>
-                        </li>
+                    <?php }?>
                     </ul>
                 </div>
             </div>
@@ -475,12 +379,12 @@ use frontend\widgets\MenuView;
                 <div class="class-box-cont">
                     <div class="title clearfix">
                         <span class="font"><img src="/static/images/welfare.png">热门分类</span>
-                        <a href="#" class="more">更多>></a>
+                        <a href="<?=Url::to(['game/index'])?>" class="more">更多>></a>
                     </div>
                     <ul class="class-box-list clearfix">
                         <?php foreach ($category as $c){?>
                         <li>
-                            <a href="">
+                            <a href="<?=Url::to(['game/index','cat'=>$c['alias']])?>">
                             <img src="<?=$c['icon']?>">
                             <p><?=$c['name']?></p>
                             </a>
@@ -504,16 +408,56 @@ use frontend\widgets\MenuView;
             </div>
         </div>
     </div>
+     <div class="video-type-box index-video-type-box">
+         <div class="content clearfix">
+             <div class="index-game-list-img">
+                 <?php $ad = Options::getAdByName('index_main_3')?>
+                 <a href="<?=$ad->link?>" target="<?=$ad->target?>" title="<?=$ad->desc?>">
+                     <img src="<?=$ad->ad?>" alt="<?=$ad->desc?>" class="banner1">
+                 </a>
+                 <?php $ad = Options::getAdByName('index_main_4')?>
+                 <a href="<?=$ad->link?>" target="<?=$ad->target?>" title="<?=$ad->desc?>">
+                     <img src="<?=$ad->ad?>" alt="<?=$ad->desc?>" class="banner1">
+                 </a>
+
+             </div>
+             <?php foreach ($hot_cate as $hc){?>
+             <div class="">
+                 <div class="title clearfix">
+                     <span class="font"><?=$hc['name']?></span>
+                     <a href="<?=Url::to(['game/index','cat'=>$hc['alias']])?>" class="more">更多>></a>
+                 </div>
+                 <div class="video-type-list show-type-list">
+                     <?php $list=\frontend\models\Anchor::find()->where(['l_cid'=>$hc['id']])->andWhere('snapshot is not null')->orderBy('hn desc')->asArray()->limit(15)->all();?>
+                     <div class="game-live-list">
+                         <ul class="clearfix">
+                             <?php foreach ($list as $l){?>
+                             <li>
+                                 <b><?=$l['platfrom_name']?></b>
+                                 <a href="<?= Url::to(['game/view','id'=>$l['id']])?>">
+                                     <div class="play-ico">
+                                         <img src="<?=$l['snapshot']?>">
+                                         <i class="play-icon"></i>
+                                     </div>
+                                     <div class="game-live-txt clearfix">
+                                         <p class="game-title"><?=$l['title']?></p>
+                                         <p class="game-type"><?=$l['l_cname']?></p>
+                                         <p class="game-name"><?=$l['anchor_name']?></p>
+                                         <p class="game-hot"><img src="/static/images/hot.png"><?=$l['hn']?></p>
+                                     </div>
+                                 </a>
+                             </li>
+                        <?php }?>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+                <?php }?>
+         </div>
+     </div>
     <div class="section05">
         <div class="content">
-            <div class="footer">
-                <div class="footer-cont clearfix">
-                    <!-- <div class="footer-top-left">
-                        <P></P>
-                    </div>
-                    <div class="footer-top-right"></div> -->
-                </div>
-            </div>
+            <?php echo $this->renderFile('@app/views/layouts/footer.php');?>
         </div>
     </div>
     </body>

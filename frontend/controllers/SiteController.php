@@ -202,11 +202,16 @@ class SiteController extends Controller
             ->with('category')
             ->where(['flag_headline'=>1])
             ->orderBy('id desc')
-            ->limit(5)->asArray()->all();
+            ->limit(6)->asArray()->all();
         $category = Lcategory::find()->where(['is_hot'=>1])->orderBy('sort asc')->asArray()->limit(10)->all();
         $live = Anchor::find()->where(['flag_headline'=>1])->limit(12)->asArray()->all();
-        $activity = Activity::find()->where(['flag_headline'=>1])->limit(3)->asArray()->all();
-        return $this->renderPartial('index',['news'=>$list,'category'=>$category,'live'=>$live,'activity'=>$activity]);
+        $activity = Activity::find()->where(['flag_headline'=>1])->limit(4)->asArray()->all();
+        $hot_live = Anchor::find()->where(['flag_special_recommend'=>1])->limit(6)->asArray()->all();
+        $top = Anchor::find()->where(['status' => Anchor::ANCHOR_PUBLISHED])->limit(9)->all();
+        //hot category
+        $hot_cate = Lcategory::find()->where(['is_hot'=>1])->asArray()->all();
+        return $this->renderPartial('index',['news'=>$list,'category'=>$category,'live'=>$live,'activity'=>$activity,
+            'hot_live'=>$hot_live,'top'=>$top,'hot_cate'=>$hot_cate]);
     }
 
     /**

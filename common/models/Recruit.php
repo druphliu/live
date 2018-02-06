@@ -19,6 +19,7 @@ use Yii;
  */
 class Recruit extends \yii\db\ActiveRecord
 {
+    const RECRUIT_PUBLISHED=1;
     /**
      * @inheritdoc
      */

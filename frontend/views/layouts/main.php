@@ -32,8 +32,7 @@ AppAsset::register($this);
     </head>
     <?php $this->beginBody() ?>
     <body>
-    <div class="">
-        <div class="content">
+    <div class="page-container">
             <div class="nav clearfix">
                 <img src="/static/images/logo.png" class="logo">
                 <?= MenuView::widget() ?>
@@ -52,10 +51,10 @@ AppAsset::register($this);
                            class="signup-loader"><?= yii::t('frontend', 'Log out') ?></a>
                     <?php } ?>
                 </div>
-            </div>
         </div>
     </div>
     <?= $content ?>
+    <?php echo $this->renderFile('@app/views/layouts/footer.php');?>
     </body>
     <?php $this->endBody() ?>
     <?php

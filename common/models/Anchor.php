@@ -31,6 +31,9 @@ use Yii;
  */
 class Anchor extends \yii\db\ActiveRecord
 {
+    const ANCHOR_PUBLISHED = 1;
+    const ANCHOR_DRAFT = 0;
+
     /**
      * @inheritdoc
      */

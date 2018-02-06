@@ -29,7 +29,7 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
         width: 100px;
     }
 </style>
-<div class="content-wrap">
+<div class="content">
     <div class="site-signup article-content" style="width:100%; margin: 0 auto">
         <h1><?= Html::encode($this->title) ?></h1>
         <style>

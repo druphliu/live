@@ -17,19 +17,24 @@ use yii\web\Controller;
 use frontend\models\Article;
 use yii\web\NotFoundHttpException;
 
-class GameController extends Controller
+class ShowController extends Controller
 {
 
     public function actionIndex($cat = '')
     {
+        if(!$cat){
+            $cat='show';
+        }
+
         $where = ['status' => Anchor::ANCHOR_PUBLISHED];
-        if ($cat != '' && $cat != 'news' && $cat != 'news.html') {
+        if ($cat != '') {
             if ($cat == yii::t('app', 'uncategoried')) {
-                $where['cid'] = 0;
+                $where['l_cid'] = 0;
             } else {
                 if (!$category = Lcategory::findOne(['alias' => $cat])) {
                     throw new NotFoundHttpException(yii::t('frontend', 'None category named {name}', ['name' => $cat]));
                 }
+                $catname = $category['name'];
                 $descendants = Lcategory::getDescendants($category['id']);
                 if (empty($descendants)) {
                     $where['l_cid'] = $category['id'];
@@ -38,7 +43,6 @@ class GameController extends Controller
                     $cids[] = $category['id'];
                     $where['l_cid'] = $cids;
                 }
-                $catname =$category['name'];
             }
         }
         $query = Anchor::find()->where($where);
@@ -53,7 +57,7 @@ class GameController extends Controller
                 'pageSize' => 21,
             ],
         ]);
-        return $this->render('index', ['dataProvider' => $dataProvider, 'type' => (!empty($cat) ? yii::t('frontend', '{catname}', ['catname' => $catname]) : yii::t('frontend', 'Latest Anchor'))]);
+        return $this->render('index', ['dataProvider' => $dataProvider, 'type' => (!empty($cat) ? $catname : yii::t('frontend', 'Latest Anchor'))]);
     }
 
     /**

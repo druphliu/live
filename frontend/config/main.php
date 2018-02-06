@@ -62,8 +62,6 @@ return [
                 'game'=>'game/index',
                 'login' => 'site/login',
                 'signup' => 'site/signup',
-                'view/<id:\d+>' => 'article/view',
-                'page/<name:\w+>' => 'page/view',
                 'comment' => 'article/comment',
                 'search' => 'search/index',
                 'tag/<tag:\w+>' => 'search/tag',
@@ -133,9 +131,10 @@ return [
                 ],
                 frontend\assets\ViewAsset::className() => [
                     'css' => [
-                       // 'a' => 'static/syntaxhighlighter/styles/shCoreDefault.css'
+                        'a'=>['static/css/swiper-3.4.0.min.css']
                     ],
                     'js' => [
+                        'a' => 'static/js/swiper-3.4.0.min.js',
                        /* 'a' => 'static/syntaxhighlighter/scripts/shCore.js',
                         'b' => 'static/syntaxhighlighter/scripts/shBrushJScript.js',
                         'c' => 'static/syntaxhighlighter/scripts/shBrushPython.js',

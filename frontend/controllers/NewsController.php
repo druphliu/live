@@ -55,7 +55,7 @@ class NewsController extends Controller
     public function actionIndex($cat = '')
     {
         if ($cat == '') {
-            $cat = yii::$app->getRequest()->getPathInfo();
+         //   $cat = yii::$app->getRequest()->getPathInfo();
         }
         $where = ['type' => Article::ARTICLE, 'status' => Article::ARTICLE_PUBLISHED];
         if ($cat != '' && $cat != 'news'&&$cat!='news.html') {
@@ -75,7 +75,7 @@ class NewsController extends Controller
                 }
             }
         }
-        $query = Article::find()->with('category')->where($where);
+        $query = Article::find()->with(['category','articleTags'])->where($where);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort' => [
@@ -86,8 +86,12 @@ class NewsController extends Controller
                 ]
             ]
         ]);
+        $top = Article::find()->limit(1)->where(['flag_headline'=>1])->andWhere('thumb<>""')->limit(2)->with('category')->orderBy("sort asc")->asArray()->all();
+        $roll = components\Article::getArticleLists(['flag_roll' => 1], 7);
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+            'top'=>$top,
+            'roll'=>$roll,
             'type' => ( !empty($cat) ? yii::t('frontend', 'Category {cat} articles', ['cat'=>$cat]) : yii::t('frontend', 'Latest Articles') ),
         ]);
     }
@@ -144,10 +148,14 @@ class NewsController extends Controller
                 }
                 break;
         }
+        $top = Article::find()->limit(1)->where(['flag_headline'=>1])->andWhere('thumb<>""')->limit(2)->with('category')->orderBy("sort asc")->asArray()->all();
+        $roll = components\Article::getArticleLists(['flag_roll' => 1], 7);
         return $this->render('view', [
             'model' => $model,
             'prev' => $prev,
             'next' => $next,
+            'top'=>$top,
+            'roll'=>$roll,
             'recommends' => $recommends,
             'commentModel' => $commentModel,
             'commentList' => $commentList,

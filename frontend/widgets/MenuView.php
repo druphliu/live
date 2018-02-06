@@ -52,8 +52,8 @@ class MenuView extends \yii\base\Widget
                     }
                 }
                 $current_menu_class = '';
-                if ($url == yii::$app->getRequest()->getUrl()) {
-                    $current_menu_class = ' current-menu-item ';
+                if (strpos($url,Yii::$app->controller->id)!==false) {
+                    $current_menu_class = ' nav-cur ';
                 }
                 unset($menus[$key]);
                 $submenu = $this->getSubMenu($menus, $menu['id']);

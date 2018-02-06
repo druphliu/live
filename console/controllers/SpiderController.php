@@ -67,7 +67,7 @@ class SpiderController extends \yii\console\Controller
     public function actionGetroominfo()
     {
         echo "beign spider room\n";
-        $roomList = Anchor::find()->where(['platform_id' => $this->platfromId])->all();
+        $roomList = Anchor::find()->where(['platform_id' => $this->platfromId])->andWhere('snapshot is null')->all();
         foreach ($roomList as $roomModel) {
             $data = $this->spider->spiderRoom($roomModel->room_id);
             $roomModel->attributes = $data;
