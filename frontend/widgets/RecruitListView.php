@@ -14,7 +14,7 @@ use yii\helpers\ArrayHelper;
 use yii\widgets\LinkPager;
 use yii\helpers\StringHelper;
 
-class ActivityListView extends \yii\widgets\ListView
+class RecruitListView extends \yii\widgets\ListView
 {
 
     public $layout = "<div class=\"activity-list-box js_news-deta\">{items}</div><div class=\"pagination\">{pager}</div>";
@@ -32,8 +32,8 @@ class ActivityListView extends \yii\widgets\ListView
     public $template = "<div class=\"activity-list-type clearfix\">
                 <div class=\"activity-list-img \"><img src=\"{img_url}\"></div>
                 <div class=\"activity-list-text\">
-                    <p>【活动标题】{title}</p>
-                    <p>【活动时间】{start} 至 {end}</p>
+                    <p>【招募标题】{title}</p>
+                    <p>【招募时间】{start} 至 {end}</p>
                     <div>
                         {summary}...
                     </div>
@@ -57,7 +57,7 @@ class ActivityListView extends \yii\widgets\ListView
                 $imgUrl = '/static/images/' . rand(1, 10) . '.jpg';
             }
             $tag='';
-            $articleUrl = Url::to(['activity/view', 'id' => $model->id]);
+            $articleUrl = Url::to(['recruit/view', 'id' => $model->id]);
             $summary = StringHelper::truncate($model->summary, 70);
             $title = StringHelper::truncate($model->title, 28);
 

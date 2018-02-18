@@ -6,8 +6,11 @@
  * Time: 0:26
  */
 
+use common\models\Options;
 use common\widgets\JsBlock;
 use frontend\assets\NewsAsset;
+use frontend\widgets\ScrollPicView;
+use yii\helpers\Url;
 
 NewsAsset::register($this);
 $this->title = yii::$app->feehi->website_title;
@@ -18,536 +21,81 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 <div class="content">
 <div class="activity-imgBox clearfix">
     <div class="actimg-top-left">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="/static/images/img2.png">
-                    <p>直播平台战队赛季精彩直播直播平台战队赛季精</p>
-                </div>
-                <div class="swiper-slide">
-                    <img src="/static/images/img2.png">
-                    <p>直播平台战队赛季精彩直播直播平台战队赛季精</p>
-                </div>
-                <div class="swiper-slide">
-                    <img src="/static/images/img2.png">
-                    <p>直播平台战队赛季精彩直播直播平台战队赛季精</p>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
+        <?= ScrollPicView::widget([
+            'banners' => Options::getBannersByType('live'),
+        ]) ?>
     </div>
     <div class="actimg-top-right clearfix">
         <ul class="activity-rig-list">
-            <li><a href="#"><img src="/static/images/img2.png"></a></li>
-            <li><a href="#"><img src="/static/images/img2.png"></a></li>
-            <li><a href="#"><img src="/static/images/img2.png"></a></li>
-            <li><a href="#"><img src="/static/images/img2.png"></a></li>
+            <?php foreach ($top as $t){?>
+            <li> <a title='<?=$t['title']?>' target='_blank' href='<?=Url::to(['live/view','id'=>$t['id']])?>'>
+                    <img src='<?=$t['thumb']?>' style='display: inline;' alt='<?=$t['title']?>'>
+                </a></li>
+            <?php }?>
         </ul>
     </div>
 </div>
 </div>
 <div class="video-type-box">
     <div class="content clearfix">
-        <div class="video-type-left">
-            <div class="title clearfix">
-                <span class="font">游戏视频</span>
-                <label class="js_nav-list act">英雄联盟</label>
-                <label class="js_nav-list">绝地求生</label>
-                <label class="js_nav-list">王者荣耀</label>
-                <label class="js_nav-list">魔兽世界</label>
-                <label class="js_nav-list">炉石传说</label>
-                <label class="js_nav-list">王者荣耀</label>
-                <a href="#" class="more">更多>></a>
-            </div>
-            <div class="video-type-list js_news-deta">
-                <div class="game-live-list">
-                    <ul class="clearfix">
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="video-type-list js_news-deta">
-                <div class="game-live-list">
-                    <ul class="clearfix">
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="video-type-list js_news-deta">
-                <div class="game-live-list">
-                    <ul class="clearfix">
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="video-type-list js_news-deta">
-                <div class="game-live-list">
-                    <ul class="clearfix">
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="video-type-list js_news-deta">
-                <div class="game-live-list">
-                    <ul class="clearfix">
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="video-type-list js_news-deta">
-                <div class="game-live-list">
-                    <ul class="clearfix">
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="video-type-right">
             <div class="title clearfix">
                 <span class="font"><img src="/static/images/video.png">热门视频</span>
-                <a href="#" class="more">更多></a>
             </div>
             <div class="game-live-list">
                 <ul class="clearfix">
-                    <li>
-                        <a href="#">
-                            <div class="play-ico">
-                                <img src="/static/images/img2.png">
-                                <i class="play-icon"></i>
-                            </div>
-                            <div class="game-live-txt clearfix">
-                                <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="play-ico">
-                                <img src="/static/images/img2.png">
-                                <i class="play-icon"></i>
-                            </div>
-                            <div class="game-live-txt clearfix">
-                                <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="play-ico">
-                                <img src="/static/images/img2.png">
-                                <i class="play-icon"></i>
-                            </div>
-                            <div class="game-live-txt clearfix">
-                                <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="play-ico">
-                                <img src="/static/images/img2.png">
-                                <i class="play-icon"></i>
-                            </div>
-                            <div class="game-live-txt clearfix">
-                                <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="play-ico">
-                                <img src="/static/images/img2.png">
-                                <i class="play-icon"></i>
-                            </div>
-                            <div class="game-live-txt clearfix">
-                                <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                            </div>
-                        </a>
-                    </li>
+                    <?php foreach ($hot as $t){?>
+                        <li>
+                            <a title='<?=$t['title']?>' target='_blank' href='<?=Url::to(['live/view','id'=>$t['id']])?>'>
+                                <div class="play-ico">
+                                    <img src='<?=$t['thumb']?>' style='display: inline;' alt='<?=$t['title']?>'>
+                                    <i class="play-icon"></i>
+                                </div>
+                                <div class="game-live-txt clearfix">
+                                    <p class="game-title"><?=$t['title']?></p>
+                                    <p class="game-hot"><img src="/static/images/hot.png"><?=$t['hn']?></p>
+                                </div>
+                            </a>
+                        </li>
+                    <?php }?>
                 </ul>
             </div>
         </div>
-        <div class="video-type-left">
-            <div class="title clearfix">
-                <span class="font">娱乐视频</span>
-                <label class="act">英雄联盟</label>
-                <label>英雄联盟</label>
-                <label>绝地求生</label>
-                <label>王者荣耀</label>
-                <label>魔兽世界</label>
-                <label>炉石传说</label>
-                <label>王者荣耀</label>
-                <a href="#" class="more">更多>></a>
-            </div>
-            <div class="video-type-list">
-                <div class="game-live-list">
-                    <ul class="clearfix">
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+        <?php $pcat = \frontend\models\VCategory::find()->where(['parent_id'=>0])->asArray()->all();?>
+        <?php foreach ($pcat as $hc){?>
+            <?php $cate = \frontend\models\VCategory::find()->where(['parent_id'=>$hc['id']])->limit(5)->asArray()->all();?>
+            <div class="video-type-left">
+                <div class="title clearfix">
+                    <span class="font"><?=$hc['name']?></span>
+                    <?php foreach ($cate as $i=>$c){?>
+                    <label class="js_nav-list <?php if($i==0){?>act<?php }?>"><?=$c['name']?></label>
+                    <?php }?>
                 </div>
+                <?php foreach ($cate as $i=>$c){?>
+                <?php echo $c['id'];$list = \frontend\models\Video::find()->where(['v_cid'=>$c['id']])->asArray()->limit(20)->all()?>
+                    <div class="video-type-list js_news-deta">
+                        <div class="game-live-list">
+                            <ul class="clearfix">
+                                <?php foreach ($list as $i=>$l){?>
+                                    <li>
+                                        <a title='<?=$l['title']?>' target='_blank' href='<?=Url::to(['live/view','id'=>$l['id']])?>'>
+                                            <div class="play-ico">
+                                                <img src="<?=$l['thumb']?>">
+                                                <i class="play-icon"></i>
+                                            </div>
+                                            <div class="game-live-txt clearfix">
+                                                <p class="game-title"><?=$l['title']?></p>
+                                                <p class="game-hot"><img src="/static/images/hot.png"><?=$l['hn']?></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                <?php }?>
+                            </ul>
+                        </div>
+                    </div>
+                <?php }?>
             </div>
-        </div>
-        <div class="video-type-left">
-            <div class="title clearfix">
-                <span class="font">特别推荐</span>
-                <label class="act">英雄联盟</label>
-                <label>英雄联盟</label>
-                <label>绝地求生</label>
-                <label>王者荣耀</label>
-                <label>魔兽世界</label>
-                <label>炉石传说</label>
-                <label>王者荣耀</label>
-                <a href="#" class="more">更多>></a>
-            </div>
-            <div class="video-type-list">
-                <div class="game-live-list">
-                    <ul class="clearfix">
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <b>虎牙</b>
-                            <a href="#">
-                                <div class="play-ico">
-                                    <img src="/static/images/img2.png">
-                                    <i class="play-icon"></i>
-                                </div>
-                                <div class="game-live-txt clearfix">
-                                    <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                    <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="activity-type-box">
-    <div class="content">
-        <ul class="page">
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">6</a></li>
-            <li><a href="#">7</a></li>
-            <li><a href="#">8</a></li>
-            <li><a href="#">9</a></li>
-            <li><a href="#">10</a></li>
-            <li class="next-page"><a href="#">下一页</a></li>
-            <li class="go-page">到第<input type="text">页</li>
-            <li class="sure"><a href="#">确定</a></li>
-        </ul>
+        <?php }?>
     </div>
 </div>
 <?php JsBlock::begin(); ?>

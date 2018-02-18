@@ -57,7 +57,10 @@ class ActivityController extends Controller
         if (empty($model)) {
             throw new NotFoundHttpException('None page named ');
         }
-        return $this->render('index', ['model' => $model]);
+        if($model->third_url)
+            return $this->redirect($model->third_url);
+        $top = Activity::find()->limit(1)->where(['flag_headline'=>1])->limit(5)->orderBy("sort asc")->asArray()->all();
+        return $this->render('view', ['model' => $model,'top'=>$top]);
     }
 
 }

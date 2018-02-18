@@ -54,11 +54,12 @@ class RecruitController extends Controller
      */
     public function actionView($id)
     {
-        $model = Activity::findOne(['id' => $id]);
+        $model = Recruit::findOne(['id' => $id]);
         if (empty($model)) {
             throw new NotFoundHttpException('None page named ');
         }
-        return $this->render('index', ['model' => $model]);
+        $top = Recruit::find()->limit(1)->where(['flag_headline'=>1])->limit(5)->orderBy("sort asc")->asArray()->all();
+        return $this->render('view', ['model' => $model,'top'=>$top]);
     }
 
 }

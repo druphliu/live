@@ -697,6 +697,58 @@ a{
 	-moz-object-fit: cover;
 	-o-object-fit: cover;
 }
+.activity-type-box .recruit_logo {
+	border: 1px solid #e4e4e4;
+	background: #f7f7f7;
+	padding: 20px;
+	margin-bottom: 25px;
+}
+.activity-type-box .recruit_area {
+	border-top: 1px solid #ebebeb;
+	padding: 27px 0 0 0;
+	word-wrap: break-word;
+}
+.activity-type-box .recruit_logo_left span.first {
+	padding-right: 40px;
+}
+.activity-type-box .recruit_logo_left_main span {
+	font-size: 14px;
+	color: #a0a0a0;
+}
+.activity-type-box .recruit_logo_left_main strong {
+	font-weight: normal;
+	font-size: 14px;
+	color: #707070;
+}
+.activity-type-box .recruit_logo_right .zhubo_apply {
+	display: block;
+	width: 195px;
+	height: 45px;
+	background: #ff6600;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 16px;
+	line-height: 45px;
+	text-indent: 3em;
+}
+.activity-type-box .recruit_logo_right {
+	padding-top: 24px;
+}
+.activity-type-box .recruit_logo_left {
+	width: 830px;
+}
+.activity-type-box .recruit_main{
+	margin-top: 20px;
+}
+.activity-type-box .zhubo_apply_icon_r {
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-left: 5px solid #fff;
+	border-bottom: 5px solid transparent;
+	display: inline-block;
+	margin-left: 10px;
+}
 .footer{
 	width: 100%;
 	height: 440px;
@@ -766,7 +818,7 @@ a{
     -moz-transform: translate(-50%,0%);
 }
 .actimg-top-right{
-	width: 520px;
+	width: 525px;
 	height: 238px;
 	float: right;
 	float: right;
@@ -1115,13 +1167,13 @@ a{
 	height: 160px;
 }
 .video-type-list .game-live-list li{
-	width: 225px;
+	width: 230px;
     height: 180px;
     position: relative;
-	margin-left: 30px;
+	margin-left: 25px;
 }
 .video-type-list .game-live-list ul{
-	margin-left: -30px;
+	margin-left: -25px;
 }
 .video-type-list .game-live-txt .game-hot{
 	width: 35%;

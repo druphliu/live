@@ -9,6 +9,7 @@
 namespace frontend\controllers;
 
 use common\models\Anchor;
+use frontend\models\Video;
 use yii;
 use yii\web\Controller;
 use frontend\models\Article;
@@ -18,7 +19,9 @@ class LiveController extends Controller
 {
 
     public function actionIndex(){
-        return $this->render('index');
+        $top = Video::find()->where(['flag_headline'=>1])->andWhere('thumb<>""')->limit(4)->orderBy("sort asc")->asArray()->all();
+        $hot = Video::find()->where('thumb<>""')->limit(5)->orderBy("hn desc")->asArray()->all();
+        return $this->render('index',['top'=>$top,'hot'=>$hot]);
     }
 
     /**
@@ -30,13 +33,13 @@ class LiveController extends Controller
      */
     public function actionView($id)
     {
-        $model = Anchor::findOne(['id'=>$id]);
+        $model = Video::findOne(['id'=>$id]);
         if (empty($model)) {
             throw new NotFoundHttpException('None page named ');
         }
         $model->hn+=1;
         $model->save();
-        $this->redirect($model->room_url);
+        $this->redirect($model->url);
     }
 
 }

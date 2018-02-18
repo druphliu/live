@@ -35,7 +35,7 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
                 <?php foreach ($top as $i=>$t){
                     if($i==0)
                         continue;
-                        ?>
+                    ?>
                     <li><a href="<?=Url::to(['activity/view','id'=>$t['id']])?>"> <img src="<?=$t['banner']?>"></a></li>
                 <?php }?>
             </ul>
@@ -44,13 +44,29 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 </div>
 <div class="activity-type-box">
     <div class="content">
-        <span class="activity-type-nav <?php if($type!=1){echo 'act';}?>"><a href="<?=Url::to(['recruit/index'])?>" >平台主播招募</a></span>
-        <span class="activity-type-nav <?php if($type==1){echo 'act';}?>"><a href="<?=Url::to(['recruit/index','type'=>1])?>" >活动主播招募</a></span>
-
-        <?= \frontend\widgets\RecruitListView::widget([
-            'dataProvider' => $dataProvider,
-        ]);
-     ?>
+        <div class="recruit_main">
+            <div class="recruit_logo clearfix">
+                <div class="recruit_logo_left fl">
+                    <div class="recruit_logo_left_main fl">
+                        <h3><?= $model->title?></h3>
+                        <p><span class="first">活动时间：<strong><?= date('Y-m-d',$model->started_at)?> 至 <?= date('Y-m-d',$model->ended_at)?></strong></span>
+                            <span>活动人数：<strong><?= $model->s_num?>/<?= $model->num?> 人</strong></span></p>
+                        <p>
+                            <span class="first">活动奖励：<strong>京东卡！玩游戏买零食开心！</strong></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="recruit_logo_right fl">
+                    <a href="#" class="zhubo_apply " data-need-check="1">
+                        <i class="zhubo_apply_icon_l"></i>
+                        活动申请                                    <b class="zhubo_apply_icon_r"></b>
+                    </a>
+                </div>
+            </div>
+            <div class="recruit_area">
+                <?= $model->desc?>
+            </div>
+        </div>
     </div>
 </div>
 
