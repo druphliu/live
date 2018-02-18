@@ -349,6 +349,42 @@ use frontend\widgets\MenuView;
                                         </div>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="play-ico">
+                                            <img src="/static/images/img2.png">
+                                            <i class="play-icon"></i>
+                                        </div>
+                                        <div class="game-live-txt clearfix">
+                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
+                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="play-ico">
+                                            <img src="/static/images/img2.png">
+                                            <i class="play-icon"></i>
+                                        </div>
+                                        <div class="game-live-txt clearfix">
+                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
+                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="play-ico">
+                                            <img src="/static/images/img2.png">
+                                            <i class="play-icon"></i>
+                                        </div>
+                                        <div class="game-live-txt clearfix">
+                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
+                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -359,6 +395,7 @@ use frontend\widgets\MenuView;
                             <span class="font"><img src="/static/images/welfare.png">新上福利</span>
                             <a href="#" class="more">更多>></a>
                         </div>
+                        <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>
                         <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>
                         <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>
                         <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>
@@ -422,7 +459,8 @@ use frontend\widgets\MenuView;
 
              </div>
              <?php foreach ($hot_cate as $hc){?>
-             <div class="">
+             <div class="index-live-box">
+                 <div class="index-live-box-cont">
                  <div class="title clearfix">
                      <span class="font"><?=$hc['name']?></span>
                      <a href="<?=Url::to(['game/index','cat'=>$hc['alias']])?>" class="more">更多>></a>
@@ -450,6 +488,7 @@ use frontend\widgets\MenuView;
                         <?php }?>
                          </ul>
                      </div>
+                 </div>
                  </div>
              </div>
                 <?php }?>

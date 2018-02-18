@@ -23,6 +23,7 @@ class GameController extends Controller
     public function actionIndex($cat = '')
     {
         $where = ['status' => Anchor::ANCHOR_PUBLISHED];
+        $platform = Yii::$app->request->get('platform');
         if ($cat != '' && $cat != 'news' && $cat != 'news.html') {
             if ($cat == yii::t('app', 'uncategoried')) {
                 $where['cid'] = 0;
@@ -40,6 +41,9 @@ class GameController extends Controller
                 }
                 $catname =$category['name'];
             }
+        }
+        if($platform){
+            $where['platform_id']=$platform;
         }
         $query = Anchor::find()->where($where);
         $dataProvider = new ActiveDataProvider([

@@ -25,7 +25,7 @@ class ShowController extends Controller
         if(!$cat){
             $cat='show';
         }
-
+        $platform = Yii::$app->request->get('platform');
         $where = ['status' => Anchor::ANCHOR_PUBLISHED];
         if ($cat != '') {
             if ($cat == yii::t('app', 'uncategoried')) {
@@ -44,6 +44,9 @@ class ShowController extends Controller
                     $where['l_cid'] = $cids;
                 }
             }
+        }
+        if($platform){
+            $where['platform_id']=$platform;
         }
         $query = Anchor::find()->where($where);
         $dataProvider = new ActiveDataProvider([

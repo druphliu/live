@@ -719,10 +719,10 @@ a{
 	border: 1px solid green;
 }
 .activity-imgBox{
-	margin-top: 77px;
+	margin-top: 30px;
 }
 .actimg-top-left,.actimg-top-left .swiper-container{
-	width: 665px;
+	width: 640px;
 	height: 238px;
 	float: left;
 	overflow: hidden;
@@ -773,15 +773,15 @@ a{
 
 }
 .activity-rig-list{
-	margin-top: -15px;
-	margin-left: -10px;
+	margin-top: -18px;
+	margin-left: -20px;
 }
 .activity-rig-list li{
 	float: left;
 	width: 238px;
-	height: 112px;
-	margin-top: 15px;
-	margin-left: 10px;
+	height: 109px;
+	margin-top: 18px;
+	margin-left: 20px;
 }
 .activity-type-nav{
 	padding: 5px 10px;
@@ -929,7 +929,7 @@ a{
 	background: none;
 }
 .grade-box{
-	margin-top: 77px;
+	margin-top: 25px;
 }
 .grade-star{
 	color: #1aa5c8;
@@ -1011,21 +1011,15 @@ a{
 	-moz-transform: translate(-50%,-50%);
 	-o-transform: translate(-50%,-50%);
 }
-.tab-num h3,.tab-num h2,.tab-num h1{
+.tab-num h3{
 	font-size: 22px !important;
 	color: #1aa5c8;
 	font-family: '微软雅黑' !important;
 	margin:0 !important;
 	font-weight:bold  !important; 
 }
-.tab-one h1{
-	font-size: 34px !important;
-}
-.tab-one h2{
-	font-size: 32px !important;
-}
 .tab-one h3{
-	font-size: 30px !important;
+	font-size: 34px !important;
 }
 .tab-num{
 	width: 71px;
@@ -1081,7 +1075,7 @@ a{
 	text-align: center;
 }
 .video-type-left{
-	width: 1005px;
+	width: 765px;
 	float: left;
 }
 .video-type-right{
@@ -1107,21 +1101,16 @@ a{
     color: #65656c;
     padding: 0 8px;
     margin-left: 10px;
-    margin-top: -10px;
+    margin-top: -5px;
     font-weight: bold;
-	border-bottom: 0px;
 }
 .video-type-list .play-ico img,.video-type-list .play-ico:hover{
 	height: 160px;
 }
 .video-type-list .game-live-list li{
-	width: 225px;
+	width: 245px;
     height: 180px;
     position: relative;
-	margin-left: 30px;
-}
-.video-type-list .game-live-list ul{
-	margin-left: -30px;
 }
 .video-type-list .game-live-txt .game-hot{
 	width: 35%;
@@ -1233,7 +1222,7 @@ a{
 	background: #00a5ca;
 }
 .left-menu-bottom{
-	width: 87%;
+	width: 95%;
 	height: 80px;
 	text-align: center;
 	background: #060608;
@@ -1293,7 +1282,7 @@ a{
 	margin-left: 15px;
 }
 .news-box-cont{
-	margin-top: 77px;
+	margin-top: 17px;
 }
 
 .news-left-box{

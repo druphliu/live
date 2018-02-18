@@ -32,7 +32,7 @@ AppAsset::register($this);
     </head>
     <?php $this->beginBody() ?>
     <body>
-    <div class="page-container">
+    <div class="page-container content-width">
             <div class="nav clearfix">
                 <img src="/static/images/logo.png" class="logo">
                 <?= MenuView::widget() ?>
@@ -53,7 +53,10 @@ AppAsset::register($this);
                 </div>
         </div>
     </div>
-    <?= $content ?>
+    <div class="margin-top">
+        <?= $content ?>
+    </div>
+
     <?php echo $this->renderFile('@app/views/layouts/footer.php');?>
     </body>
     <?php $this->endBody() ?>

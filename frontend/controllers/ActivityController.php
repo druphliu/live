@@ -21,7 +21,7 @@ use yii\web\NotFoundHttpException;
 class ActivityController extends Controller
 {
 
-    public function actionIndex($type = 1)
+    public function actionIndex($type = 0)
     {
         $where = ['status' => Activity::ACTIVITY_PUBLISHED];
         $query = Activity::find()->where($where);
@@ -41,7 +41,7 @@ class ActivityController extends Controller
         ]);
         $top = Activity::find()->limit(1)->where(['flag_headline'=>1])->limit(5)->orderBy("sort asc")->asArray()->all();
 
-        return $this->render('index', ['dataProvider' => $dataProvider,'top'=>$top]);
+        return $this->render('index', ['dataProvider' => $dataProvider,'top'=>$top,'type'=>$type]);
     }
 
     /**

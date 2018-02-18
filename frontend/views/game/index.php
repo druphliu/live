@@ -27,8 +27,9 @@ $this->registerMetaTag(['keywords' => yii::$app->feehi->seo_keywords]);
 $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 ?>
 
-<div class="video-type-box">
-    <div class="content clearfix">
+
+<div class="video-type-box margin-top">
+    <div class="content clearfix video-content">
         <div class="game-list-img">
             <?php $ad = Options::getAdByName('game_index_1')?>
             <a href="<?=$ad->link?>" target="<?=$ad->target?>" title="<?=$ad->desc?>">
@@ -52,32 +53,52 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
         <!-- 左侧菜单 -->
         <div class="left-menu clearfix">
             <div class="left-menu-cont">
-                <?php $cate = \frontend\models\Lcategory::find()->where(['parent_id'=>0])->asArray()->all()?>
+                <ul class="left-menu-list">
+                    <li><img src="/static/images/icon01.png"><span>全部直播</span></li>
+                    <li><img src="/static/images/icon02.png"><span>全部分类</span></li>
+                    <li><img src="/static/images/icon03.png"><span>排行榜</span></li>
+                    <li><img src="/static/images/icon03.png"><span>主播招聘</span></li>
+                    <li><img src="/static/images/icon03.png"><span>商城</span></li>
+                </ul>
+                <?php $cate = \frontend\models\Lcategory::find()->where(['parent_id'=>0])->andWhere('id<>4')->asArray()->all()?>
                 <?php foreach ($cate as $c){?>
-                <div class="left-menu-class">
-                    <h3><?= $c['name']?></h3>
-                    <div class="span">
-                        <?php $lcat=\frontend\models\Lcategory::find()->where(['parent_id'=>$c['id']])->asArray()->all();?>
-                        <?php foreach ($lcat as $lc){?>
-                        <span><a href="<?= Url::to(['game/index','cat'=>$lc['alias']])?>"> <?= $lc['name']?></a></span>
-                        <?php }?>
-                        <span><a href="<?= Url::to(['game/index','cat'=>$c['alias']])?>">全部</a></span>
+                    <div class="left-menu-class">
+                        <h3><?= $c['name']?></h3>
+                        <div class="span">
+                            <?php $lcat=\frontend\models\Lcategory::find()->where(['parent_id'=>$c['id']])->asArray()->limit(10)->all();?>
+                            <?php foreach ($lcat as $lc){?>
+                                <span><a href="<?= Url::to(['game/index','cat'=>$lc['alias']])?>"> <?= $lc['name']?></a></span>
+                            <?php }?>
+                            <span><a href="<?= Url::to(['game/index','cat'=>$c['alias']])?>">全部</a></span>
+                        </div>
                     </div>
-                </div>
                 <?php }?>
                 <div class="left-menu-class">
                     <h3>直播平台</h3>
                     <div class="span">
-                        <span>虎牙</span>
-                        <span>斗鱼</span>
-                        <span>全民</span>
-                        <span>战旗</span>
-                        <span>熊猫</span>
-                        <span>全部</span>
+                        <?php $plat =\frontend\models\Platform::find()->where(['status'=>1])->asArray()->all();?>
+                        <?php foreach ($plat as $pl){?>
+                            <span><a href="<?= Url::to(['game/index','platform'=>$pl['id']])?>"> <?= $pl['name']?></a></span>
+                        <?php }?>
+                        <span><a href="<?= Url::to(['game/index'])?>">全部</a></span>
                     </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="left-menu-bottom">
+                    <a href="#">登录</a>
+                    <a href="#">注册</a>
                 </div>
             </div>
             <b class="shrink"><img src="/static/images/shrink.png"></b>
+        </div>
+        <div class="left-menu-min">
+            <ul class="left-menu-list">
+                <li><img src="/static/images/icon01.png"><span>直播</span></li>
+                <li><img src="/static/images/icon02.png"><span>分类</span></li>
+                <li><img src="/static/images/icon03.png"><span>排行榜</span></li>
+                <li><img src="/static/images/icon03.png"><span>商城</span></li>
+                <b class="shrink01"><img src="/static/images/shrink01.png"></b>
+            </ul>
         </div>
     </div>
 </div>

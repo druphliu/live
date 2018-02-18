@@ -42,7 +42,7 @@ class RecruitController extends Controller
         ]);
         $top = Recruit::find()->limit(1)->where(['flag_headline'=>1])->limit(5)->orderBy("sort asc")->asArray()->all();
 
-        return $this->render('index', ['dataProvider' => $dataProvider,'top'=>$top]);
+        return $this->render('index', ['dataProvider' => $dataProvider,'top'=>$top,'type'=>$type]);
     }
 
     /**
