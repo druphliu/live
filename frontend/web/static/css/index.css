@@ -1127,7 +1127,7 @@ a{
 	min-height: 700px;
 }
 .index-video-type-box .show-type-list .game-live-list li{
-	width: 230px;
+	width: 214px;
 }
 .index-video-type-box .title span{
 	text-align: center;
@@ -1335,6 +1335,7 @@ a{
 .index-live-box-cont{
 	margin: auto;
 	margin-top: 20px;
+	width: 1170px;
 }
 .game-list-img a>img{
 	width: 49%;

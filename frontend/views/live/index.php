@@ -72,7 +72,7 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
                     <?php }?>
                 </div>
                 <?php foreach ($cate as $i=>$c){?>
-                <?php echo $c['id'];$list = \frontend\models\Video::find()->where(['v_cid'=>$c['id']])->asArray()->limit(20)->all()?>
+                <?php echo $c['id'];$list = \frontend\models\Video::find()->where(['v_cid'=>$c['id']])->andWhere('thumb<>""')->asArray()->limit(20)->all()?>
                     <div class="video-type-list js_news-deta">
                         <div class="game-live-list">
                             <ul class="clearfix">

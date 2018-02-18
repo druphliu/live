@@ -22,7 +22,7 @@ use yii\web\NotFoundHttpException;
 class RecruitController extends Controller
 {
 
-    public function actionIndex($type = 1)
+    public function actionIndex($type = 0)
     {
         $where = ['status' => Recruit::RECRUIT_PUBLISHED];
         $query = Recruit::find()->where($where);

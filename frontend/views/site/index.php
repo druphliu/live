@@ -96,92 +96,149 @@ use frontend\widgets\MenuView;
                             <a href="<?= Url::to(['game/index'])?>" target="_blank" class="more">更多>></a>
                         </div>
                     </div>
-                    <div class="star-live-box">
-                        <div class="left clearfix">
-                            <div class="clearfix">
-                                <div class="live-lef">
-                                    <a href="<?= Url::to(['live/view','id'=>$live[0]['id']])?>" target="_blank">
-                                    <img src="<?=$live[0]['avatar']?>">
-                                    <label class="tips"><i></i>直播中</label>
-                                    </a>
+                    <div class="">
+
+                        <div class="star-livebox-lef clearfix">
+                            <div class="sec bnspic">
+                                <div class="big_pic">
+                                    <ul>
+                                        <li class="on">
+                                            <a href="<?= Url::to(['live/view','id'=>$live[0]['id']])?>"><img src="<?=$live[0]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[1]['id']])?>"><img src="<?=$live[1]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[2]['id']])?>"><img src="<?=$live[2]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[3]['id']])?>"><img src="<?=$live[3]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[4]['id']])?>"><img src="<?=$live[4]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="live-rig">
-                                    <div class="live-minbox">
-                                        <a href="<?= Url::to(['live/view','id'=>$live[1]['id']])?>" target="_blank">
-                                        <img src="<?=$live[1]['avatar']?>">
-                                        <label class="tips01"><i></i>直播中</label>
-                                        </a>
-                                    </div>
-                                    <div class="live-minbox">
-                                        <a href="<?= Url::to(['live/view','id'=>$live[2]['id']])?>" target="_blank">
-                                        <img src="<?=$live[2]['avatar']?>">
-                                        <label class="tips01"><i></i>直播中</label>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="down-live clearfix">
-                                <div>
-                                    <a href="<?= Url::to(['live/view','id'=>$live[3]['id']])?>" target="_blank">
-                                    <img src="<?=$live[3]['avatar']?>">
-                                    <label class="tips01"><i></i>直播中</label>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="<?= Url::to(['live/view','id'=>$live[4]['id']])?>" target="_blank">
-                                    <img src="<?=$live[4]['avatar']?>">
-                                    <label class="tips01"><i></i>直播中</label>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="<?= Url::to(['live/view','id'=>$live[5]['id']])?>" target="_blank">
-                                    <img src="<?=$live[5]['avatar']?>">
-                                    <label class="tips01"><i></i>直播中</label>
-                                    </a>
+                                <div class="small_pic clearfix">
+                                    <ul>
+                                        <li class="on">
+                                            <a href="<?= Url::to(['live/view','id'=>$live[0]['id']])?>"><img src="<?=$live[0]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[1]['id']])?>"><img src="<?=$live[1]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[2]['id']])?>"><img src="<?=$live[2]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[3]['id']])?>"><img src="<?=$live[3]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[4]['id']])?>"><img src="<?=$live[4]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="rig clearfix">
-                            <div class="clearfix">
-                                <div class="live-lef">
-                                    <a href="<?= Url::to(['live/view','id'=>$live[6]['id']])?>" target="_blank">
-                                    <img src="<?=$live[6]['avatar']?>">
-                                    <label class="tips"><i></i>直播中</label>
-                                    </a>
+                        <div class="star-livebox-rig clearfix">
+                            <div class="sec bnspic">
+                                <div class="big_rigpic">
+                                    <ul>
+                                        <li class="on">
+                                            <a href="<?= Url::to(['live/view','id'=>$live[5]['id']])?>"><img src="<?=$live[5]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[6]['id']])?>"><img src="<?=$live[6]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[7]['id']])?>"><img src="<?=$live[7]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[8]['id']])?>"><img src="<?=$live[8]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[9]['id']])?>"><img src="<?=$live[9]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="live-rig">
-                                    <div class="live-minbox">
-                                        <a href="<?= Url::to(['live/view','id'=>$live[7]['id']])?>" target="_blank">
-                                        <img src="<?=$live[7]['avatar']?>">
-                                        <label class="tips01"><i></i>直播中</label>
-                                        </a>
-                                    </div>
-                                    <div class="live-minbox">
-                                        <a href="<?= Url::to(['live/view','id'=>$live[8]['id']])?>" target="_blank">
-                                        <img src="<?=$live[8]['avatar']?>">
-                                        <label class="tips01"><i></i>直播中</label>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="down-live clearfix">
-                                <div>
-                                    <a href="<?= Url::to(['live/view','id'=>$live[9]['id']])?>" target="_blank">
-                                    <img src="<?=$live[9]['avatar']?>">
-                                    <label class="tips01"><i></i>直播中</label>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="<?= Url::to(['live/view','id'=>$live[10]['id']])?>" target="_blank">
-                                    <img src="<?=$live[10]['avatar']?>">
-                                    <label class="tips01"><i></i>直播中</label>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="<?= Url::to(['live/view','id'=>$live[11]['id']])?>" target="_blank">
-                                    <img src="<?=$live[11]['avatar']?>">
-                                    <label class="tips01"><i></i>直播中</label>
-                                    </a>
+                                <div class="small_rigpic clearfix">
+                                    <ul>
+                                        <li class="on">
+                                            <a href="<?= Url::to(['live/view','id'=>$live[5]['id']])?>"><img src="<?=$live[5]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[6]['id']])?>"><img src="<?=$live[6]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[7]['id']])?>"><img src="<?=$live[7]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[8]['id']])?>"><img src="<?=$live[8]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="<?= Url::to(['live/view','id'=>$live[9]['id']])?>"><img src="<?=$live[9]['avatar']?>"/></a>
+                                            <div class="live-lef">
+                                                <label class="tips"><i></i>直播中1</label>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -273,118 +330,24 @@ use frontend\widgets\MenuView;
                     <div class="min-cont">
                         <div class="title clearfix">
                             <span class="font"><img src="/static/images/video.png">精彩视频</span>
-                            <a href="#" class="more">更多>></a>
+                            <a href="<?=Url::to(['live/index'])?>" class="more">更多>></a>
                         </div>
                         <div class="game-live-list">
                             <ul class="clearfix">
+                                <?php foreach ($top_video as $t){?>
                                 <li>
-                                    <a href="#">
+                                    <a href="<?=Url::to(['live/view','id'=>$t['id']])?>">
                                         <div class="play-ico">
-                                            <img src="/static/images/img2.png">
+                                            <img src='<?=$t['thumb']?>' style='display: inline;' alt='<?=$t['title']?>'>
                                             <i class="play-icon"></i>
                                         </div>
                                         <div class="game-live-txt clearfix">
-                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
+                                            <p class="game-title"><?=$t['title']?></p>
+                                            <p class="game-hot"><img src="/static/images/hot.png"><?=$t['hn']?></p>
                                         </div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="play-ico">
-                                            <img src="/static/images/img2.png">
-                                            <i class="play-icon"></i>
-                                        </div>
-                                        <div class="game-live-txt clearfix">
-                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="play-ico">
-                                            <img src="/static/images/img2.png">
-                                            <i class="play-icon"></i>
-                                        </div>
-                                        <div class="game-live-txt clearfix">
-                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="play-ico">
-                                            <img src="/static/images/img2.png">
-                                            <i class="play-icon"></i>
-                                        </div>
-                                        <div class="game-live-txt clearfix">
-                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="play-ico">
-                                            <img src="/static/images/img2.png">
-                                            <i class="play-icon"></i>
-                                        </div>
-                                        <div class="game-live-txt clearfix">
-                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="play-ico">
-                                            <img src="/static/images/img2.png">
-                                            <i class="play-icon"></i>
-                                        </div>
-                                        <div class="game-live-txt clearfix">
-                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="play-ico">
-                                            <img src="/static/images/img2.png">
-                                            <i class="play-icon"></i>
-                                        </div>
-                                        <div class="game-live-txt clearfix">
-                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="play-ico">
-                                            <img src="/static/images/img2.png">
-                                            <i class="play-icon"></i>
-                                        </div>
-                                        <div class="game-live-txt clearfix">
-                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="play-ico">
-                                            <img src="/static/images/img2.png">
-                                            <i class="play-icon"></i>
-                                        </div>
-                                        <div class="game-live-txt clearfix">
-                                            <p class="game-title">就是主播命名标题就是主播命名标题</p>
-                                            <p class="game-hot"><img src="/static/images/hot.png">2222</p>
-                                        </div>
-                                    </a>
-                                </li>
+                                <?php }?>
                             </ul>
                         </div>
                     </div>
