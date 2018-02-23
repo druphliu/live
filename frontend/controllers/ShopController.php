@@ -53,11 +53,11 @@ class ShopController extends Controller
      */
     public function actionView($id)
     {
-        $model = Activity::findOne(['id' => $id]);
+        $model = Goods::findOne(['id' => $id]);
         if (empty($model)) {
             throw new NotFoundHttpException('None page named ');
         }
-        return $this->render('index', ['model' => $model]);
+        return $this->render('view', ['model' => $model]);
     }
 
 }

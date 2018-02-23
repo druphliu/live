@@ -69,7 +69,7 @@ a{
 	-webkit-transition: all 0.2s ease;
 }
 .nav-list li:hover{
-	background: #00a5ca;
+	background: #64b8ca;
 }
 .nav-list li:hover a{
 	text-decoration: none;
@@ -1625,7 +1625,7 @@ a{
 .link_friend a{ color:#bbb; margin-right:20px; line-height:24px;}
 .link_friend a:hover{color: #fff;}
 .nav-cur{
-	background: #1aa5c8;
+	background: #64b8ca;
 }
 .shop-box-top{
 	width: 1200px;
@@ -1817,4 +1817,10 @@ a{
 .star-livebox-rig{
 	float: right;
 	margin-right: 15px;
+}
+.goods-preview {
+	width: 500px;
+}
+.shop-class-view{
+    margin-top: 77px;
 }

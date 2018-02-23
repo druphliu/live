@@ -379,7 +379,7 @@ use frontend\widgets\MenuView;
                     <div class="min-cont">
                         <div class="title clearfix">
                             <span class="font"><img src="/static/images/welfare.png">新上福利</span>
-                            <a href="#" class="more">更多>></a>
+                            <a href="<?=Url::to(['shop/index'])?>" class="more">更多>></a>
                         </div>
                         <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>
                         <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>

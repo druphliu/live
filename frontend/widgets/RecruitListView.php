@@ -61,7 +61,7 @@ class RecruitListView extends \yii\widgets\ListView
             $articleUrl = Url::to(['recruit/view', 'id' => $model->id]);
             $summary = StringHelper::truncate($model->summary, 45);
             $title = StringHelper::truncate($model->title, 28);
-            $addr = $model->type==1?'【招募平台】'.$model->addr:'【活动地址】'.$model->addr;
+            $addr = $model->type!=1?'【招募平台】'.$model->addr:'【活动地址】'.$model->addr;
             return str_replace([
                 '{article_url}',
                 '{img_url}',
