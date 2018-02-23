@@ -44,8 +44,8 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 </div>
 <div class="activity-type-box">
     <div class="content">
-        <span class="activity-type-nav  <?php if($type==1){echo 'act';}?>"><a href="<?=Url::to(['activity/index','type'=>1])?>" >广告合作</a></span>
-        <span class="activity-type-nav <?php if($type!=1){echo 'act';}?>"><a href="<?=Url::to(['activity/index'])?>" >所有活动</a></span>
+        <span class="activity-type-nav  <?php if($type==1){echo 'act';}?>"><a href="<?=Url::to(['activity/index','type'=>1])?>" >线上活动</a></span>
+        <span class="activity-type-nav <?php if($type!=1){echo 'act';}?>"><a href="<?=Url::to(['activity/index'])?>" >线下活动</a></span>
         <a href="#" class="tougao">活动投稿>></a>
 
         <?= \frontend\widgets\ActivityListView::widget([

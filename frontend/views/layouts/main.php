@@ -32,7 +32,7 @@ AppAsset::register($this);
     </head>
     <?php $this->beginBody() ?>
     <body>
-    <div class="page-container content-width">
+    <div class="page-container content-width <?=$this->context->id?>">
             <div class="nav clearfix">
                 <img src="/static/images/logo.png" class="logo">
                 <?= MenuView::widget() ?>

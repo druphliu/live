@@ -37,6 +37,8 @@ if ($parent_id != '') {
                 <?= $form->field($model, 'sort')->textInput(['maxlength' => 512]) ?>
                 <div class="hr-line-dashed"></div>
                 <?= $form->field($model, 'remark')->textInput(['maxlength' => 64]) ?>
+                <div class="hr-line-dashed"></div>
+                <?= $form->field($model, 'is_hot')->dropDownList(['否','是']); ?>
                 <?= $form->defaultButtons() ?>
                 <?php ActiveForm::end(); ?>
             </div>

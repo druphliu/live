@@ -34,6 +34,7 @@ class RecruitListView extends \yii\widgets\ListView
                 <div class=\"activity-list-text\">
                     <p>【招募标题】{title}</p>
                     <p>【招募时间】{start} 至 {end}</p>
+                    <p>{addr}</p>
                     <div>
                         {summary}...
                     </div>
@@ -58,9 +59,9 @@ class RecruitListView extends \yii\widgets\ListView
             }
             $tag='';
             $articleUrl = Url::to(['recruit/view', 'id' => $model->id]);
-            $summary = StringHelper::truncate($model->summary, 70);
+            $summary = StringHelper::truncate($model->summary, 45);
             $title = StringHelper::truncate($model->title, 28);
-
+            $addr = $model->type==1?'【招募平台】'.$model->addr:'【活动地址】'.$model->addr;
             return str_replace([
                 '{article_url}',
                 '{img_url}',
@@ -68,13 +69,15 @@ class RecruitListView extends \yii\widgets\ListView
                 '{summary}',
                 '{start}',
                 '{end}',
+                '{addr}'
             ], [
                 $articleUrl,
                 $imgUrl,
                 $title,
                 $summary,
                 date('Y年-m月-d日', $model->started_at),
-                date('Y年-m月-d日', $model->ended_at)
+                date('Y年-m月-d日', $model->ended_at),
+                $addr
             ], $this->template);
         };
     }

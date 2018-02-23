@@ -52,7 +52,10 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
                         <p><span class="first">活动时间：<strong><?= date('Y-m-d',$model->started_at)?> 至 <?= date('Y-m-d',$model->ended_at)?></strong></span>
                             <span>活动人数：<strong><?= $model->s_num?>/<?= $model->num?> 人</strong></span></p>
                         <p>
-                            <span class="first">活动奖励：<strong>京东卡！玩游戏买零食开心！</strong></span>
+                            <span class="first">活动地址：<?=$model->addr?></span>
+                        </p>
+                        <p>
+                            <span class="first">活动奖励：<strong><?=$model->prize?></strong></span>
                         </p>
                     </div>
                 </div>

@@ -26,7 +26,7 @@ $this->title = yii::$app->feehi->website_title;
 $this->registerMetaTag(['keywords' => yii::$app->feehi->seo_keywords]);
 $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 ?>
-<div class="activity-type-box">
+<div class="activity-type-box clearfix">
     <div class="content">
         <div class="shop-box-top js_news-deta">
             <?php $ad = Options::getAdByName('shop_index_1')?>

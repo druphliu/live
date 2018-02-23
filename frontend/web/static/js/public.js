@@ -7,8 +7,10 @@ $(function(){
         });
         $(".js_nav-list").click(function(){
             var this_i = $(this).attr("num");
-            $(this).siblings().removeClass("act");
-             $(this).addClass("act");
+            $(this).siblings().removeClass("act").addClass("index_sub_tab");
+             $(this).addClass("act").removeClass("index_sub_tab");
+            $(this).siblings().find('img').attr('src','/static/images/game_gray.png');
+            $(this).find('img').attr('src','/static/images/game.png');
             // if($(".nav-list").find("a").is(".curr")){
             //      $(".nav-list").find("a").removeClass("curr");
             //      $(this).find("a").addClass("curr");;
@@ -24,13 +26,13 @@ $(function(){
         $(".left-menu-min").show();
         $(".show-type-box").css({
             "width":'94%',
-            "margin-left":'95px'
+            "margin-left":'75px'
         })
         $(".show-type-list .game-live-list li").css({
-            "width":'240px'
+            "width":'275px'
         })
         $(".game-list-img").css({
-            "margin-left":'95px'
+            "margin-left":'75px'
         })
     })
     $(".shrink01").click(function(){
@@ -38,13 +40,13 @@ $(function(){
         $(".left-menu").show();
         $(".show-type-box").css({
             "width":'88%',
-            "margin-left":'219px'
+            "margin-left":'250px'
         })
         $(".show-type-list .game-live-list li").css({
-            "width":'225px'
+            "width":'305px'
         })
         $(".game-list-img").css({
-            "margin-left":'219px'
+            "margin-left":'250px'
         })
     })
     $(".small_pic li").mouseover(function(){

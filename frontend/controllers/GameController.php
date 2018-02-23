@@ -22,6 +22,7 @@ class GameController extends Controller
 
     public function actionIndex($cat = '')
     {
+        $category=[];
         $where = ['status' => Anchor::ANCHOR_PUBLISHED];
         $platform = Yii::$app->request->get('platform');
         if ($cat != '' && $cat != 'news' && $cat != 'news.html') {
@@ -57,7 +58,8 @@ class GameController extends Controller
                 'pageSize' => 21,
             ],
         ]);
-        return $this->render('index', ['dataProvider' => $dataProvider, 'type' => (!empty($cat) ? yii::t('frontend', '{catname}', ['catname' => $catname]) : yii::t('frontend', 'Latest Anchor'))]);
+        $hot = Anchor::find()->where($where)->andWhere(['flag_special_recommend'=>1])->asArray()->limit(6)->all();
+        return $this->render('index', ['category'=>$category,'hot'=>$hot,'dataProvider' => $dataProvider, 'type' => (!empty($cat) ? yii::t('frontend', '{catname}', ['catname' => $catname]) : yii::t('frontend', 'Latest Anchor'))]);
     }
 
     /**

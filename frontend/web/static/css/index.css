@@ -23,14 +23,20 @@ a{
 	margin-right: 10px;
 }
 .page-container .logo{
-	margin-left: 20px;
+	margin-left: 300px;
+}
+.game .logo,.show .logo{
+	margin-left: 120px !important;
 }
 .page-container .login-register{
-	margin-right: 20px;
+	margin-right: 330px;
+}
+.game .login-register,.show .login-register{
+	margin-right: 200px !important;
 }
 .section01 {
     width: 100%;
-    height: 635px;
+    height: 520px;
     /*background: url(../images/banner.png) no-repeat center;*/
     /*background-size: cover;*/
 }
@@ -51,7 +57,7 @@ a{
 .nav{
 /*	width: 1200px;*/
 	height: 54px;
-	background: #000000;
+	background: #00a5ca;
 	position: relative;
 }
 .nav-list li{
@@ -126,14 +132,23 @@ a{
 	border-bottom: 1px solid #00a5ca;
 }
 .title span{
-	width: 108px;
-	height: 27px;
+	width: 115px;
+	height: 26px;
 	display: inline-block;
 	border-radius: 7px 7px 0px 0px;
 	background: #00a5ca;
 	font-size: 16px;
-	line-height: 27px;
+	line-height: 26px;
 	cursor: pointer;
+}
+.section03 .sub_tab,.index-video-box .sub_tab,.index-live-box .sub_tab,.show-type-box .sub_tab{
+	background: none;
+}
+.section03 .index_sub_tab{
+	background: none;
+	border: 1px solid #cdcdd1;
+	color: #65656c;
+	border-bottom: none;
 }
 .title span img{
 	margin: 4px 8px;
@@ -367,6 +382,7 @@ a{
 	float: left;
 	margin-top: 15px;
 	margin-left: 15px;
+	list-style: none;
 }
 .play-ico{
 	position: relative;
@@ -550,7 +566,7 @@ a{
 }
 .banner3,.activity-box{
 	width: 270px;
-	height: 690px;
+	height: 331px;
 	float: right;
 	margin-top: 30px;
 }
@@ -887,7 +903,7 @@ a{
 .activity-list-text{
 	float: left;
 	width: 590px;
-	height: 105px;
+	height: 115px;
 	overflow: hidden;
 	margin-top: 24px;
 }
@@ -1146,7 +1162,7 @@ a{
 .video-type-left .font{
 	text-align: center;
 }
-.video-type-left label{
+.video-type-left label,.game-live-title .sub_tab,.index-video-box .sub_tab,.index-live-box .sub_tab,.show-type-box .sub_tab{
     height: 27px;
     display: inline-block;
     border-radius: 3px 3px 0px 0px;
@@ -1164,7 +1180,7 @@ a{
 	border-bottom: 0px;
 }
 .video-type-list .play-ico img,.video-type-list .play-ico:hover{
-	height: 160px;
+	height: 190px;
 }
 .video-type-list .game-live-list li{
 	width: 230px;
@@ -1209,18 +1225,18 @@ a{
 	margin-top: 25px;
 }
 .show-type-box{
-	width: 88%;
-	margin-left: 219px;
+	width: 86%;
+	margin-left: 260px;
 	margin-top: 15px;
 }
 .show-type-list .game-live-list li{
-	height: 200px;
+	height: 245px;
 }
 .show-type-list .game-live-list li{
-	width: 225px;
+	width: 305px;
 }
 .left-menu{
-	width: 213px;
+	width: 252px;
 	height: 100%;
 	position: fixed;
 	top: 53px;
@@ -1228,7 +1244,7 @@ a{
 	z-index: 899
 }
 .left-menu-cont{
-	width: 202px;
+	width: 240px;
 	height: 100%;
 	float: left;
 	background: #2a2a34;
@@ -1266,7 +1282,7 @@ a{
 }
 .left-menu-class .span span,.left-menu-bottom a{
 	display: inline-block;
-	width: 52px;
+	width: 65px;
 	height: 22px;
 	text-align: center;
 	line-height: 22px;
@@ -1335,7 +1351,9 @@ a{
 .index-live-box-cont{
 	margin: auto;
 	margin-top: 20px;
+	padding-bottom: 20px;
 	width: 1170px;
+	padding-top: 20px;
 }
 .game-list-img a>img{
 	width: 49%;
@@ -1613,6 +1631,7 @@ a{
 	width: 1200px;
 	height: 124px;
 	margin: 22px auto;
+	margin-top: 77px;
 }
 .shop-box-top img,.shop-floor-list img{
 	width: 100%;
@@ -1690,12 +1709,12 @@ a{
 	position: relative;
 }
 .left-menu-min{
-	width: 75px;
+	width: 55px;
 	position: relative;
 	display: none;
 }
 .left-menu-min ul{
-	width: 75px;
+	width: 55px;
 	height: 100%;
 	top: 53px;
 	position: fixed;

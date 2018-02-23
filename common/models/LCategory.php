@@ -23,6 +23,7 @@ use yii\helpers\ArrayHelper;;
  * @property string $updated_at
  * @property string $remark
  * @property integer $parent_id
+ * @property integer $is_hot
  */
 class LCategory extends \yii\db\ActiveRecord
 {
@@ -47,7 +48,7 @@ class LCategory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sort', 'parent_id', 'created_at', 'updated_at'], 'integer'],
+            [['sort', 'parent_id', 'created_at', 'updated_at','is_hot'], 'integer'],
             [['sort'], 'compare', 'compareValue' => 0, 'operator' => '>='],
             [['name', 'alias', 'remark'], 'string', 'max' => 255],
             [['alias'],  'match', 'pattern' => '/^[a-zA-Z0-9_]+$/', 'message' => yii::t('app', 'Only includes alphabet,_,and number')],
@@ -69,6 +70,7 @@ class LCategory extends \yii\db\ActiveRecord
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'remark' => Yii::t('app', 'Remark'),
+            'is_hot'=>'是否热门'
         ];
     }
 

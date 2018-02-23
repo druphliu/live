@@ -26,9 +26,7 @@ class RecruitController extends Controller
     {
         $where = ['status' => Recruit::RECRUIT_PUBLISHED];
         $query = Recruit::find()->where($where);
-        if($type){
             $query->andWhere(['type'=>$type]);
-        }
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort' => [

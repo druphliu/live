@@ -46,7 +46,7 @@
 
     <div class="copyright">
 
-        <p>Copyright © 2017 - 2018 1DIANZB.Com Co. All Rights Reserved
+        <p>Copyright © 2017 - 2018 www.1dianzb.com Co. All Rights Reserved
         </p>
         <p>
             <a href="http://www.miibeian.gov.cn/" target="_blank">津ICP备16002221号-3</a>&nbsp;

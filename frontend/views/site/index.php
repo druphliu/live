@@ -12,6 +12,7 @@
 
 use common\helpers\StringHelper;
 use common\models\Options;
+use frontend\models\Lcategory;
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
 use yii\helpers\Url;
@@ -34,32 +35,35 @@ use frontend\widgets\MenuView;
     </head>
     <?php $this->beginBody() ?>
     <body>
+    <div class="margin-top">
      <div class="section01 index" >
          <?php $ad = Options::getAdByName('index_back')?>
          <a href="<?=$ad->link?>" target="<?=$ad->target?>" title="<?=$ad->desc?>">
              <img src="<?=$ad->ad?>" alt="<?=$ad->desc?>"  class="banner">
          </a>
+         <div class="page-container content-width">
+             <div class="nav clearfix">
+                 <img src="/static/images/logo.png" class="logo">
+                 <?= MenuView::widget() ?>
+                 <div class="login-register">
+                     <?php
+                     if (yii::$app->user->isGuest) {
+                         ?>
+                         <a href="<?= Url::to(['site/login']) ?>"
+                            class="signin-loader"><?= yii::t('frontend', 'Hi, Log in') ?></a><i></i>
+                         <a href="<?= Url::to(['site/signup']) ?>"
+                            class="signup-loader"><?= yii::t('frontend', 'Sign up') ?></a>
+                     <?php } else { ?>
+                         <a href="<?= Url::to(['user/index']) ?>"><?= Html::encode(yii::$app->user->identity->username) ?></a>
+                         <i></i>
+                         <a href="<?= Url::to(['site/logout']) ?>"
+                            class="signup-loader"><?= yii::t('frontend', 'Log out') ?></a>
+                     <?php } ?>
+                 </div>
+             </div>
+         </div>
         <div class="content">
-            <div class="none"></div>
-            <div class="nav clearfix">
-                <img src="/static/images/logo.png" class="logo">
-                <?= MenuView::widget() ?>
-                <div class="login-register">
-                    <?php
-                    if (yii::$app->user->isGuest) {
-                        ?>
-                        <a href="<?= Url::to(['site/login']) ?>"
-                           class="signin-loader"><?= yii::t('frontend', 'Hi, Log in') ?></a><i></i>
-                        <a href="<?= Url::to(['site/signup']) ?>"
-                           class="signup-loader"><?= yii::t('frontend', 'Sign up') ?></a>
-                    <?php } else { ?>
-                        <a href="<?= Url::to(['user/index']) ?>"><?= Html::encode(yii::$app->user->identity->username) ?></a>
-                        <i></i>
-                        <a href="<?= Url::to(['site/logout']) ?>"
-                           class="signup-loader"><?= yii::t('frontend', 'Log out') ?></a>
-                    <?php } ?>
-                </div>
-            </div>
+
             <div class="recommend clearfix">
                 <div class="recommend-lef">
                     <div class="rec-title">
@@ -73,12 +77,12 @@ use frontend\widgets\MenuView;
                         <ul>
                             <?php foreach ($news as $i=>$new){?>
                             <?php if($i==0){?>
-                                    <a href="<?= Url::to(['news/view',['id'=>$new['id']]])?>" target="_blank"><p class="font list-box-tit"><?= StringHelper::truncate($new['title'],15)?></p></a>
+                                    <a href="<?= Url::to(['news/view','id'=>$new['id']])?>" target="_blank"><p class="font list-box-tit"><?= StringHelper::truncate($new['title'],15)?></p></a>
                             <?php }else{?>
                             <li>
                                 <p class="news-tit">
                                     <span>[<?= $new['category']['name']?>]</span>
-                                    <a href="<?= Url::to(['news/view',['id'=>$new['id']]])?>" target="_blank"><?= $new['title']?></a>
+                                    <a href="<?= Url::to(['news/view','id'=>$new['id']])?>" target="_blank"><?= $new['title']?></a>
                                 </p>
                                 <img src="/static/images/rig.png" class="rig">
                                 <div class="desc"><img src="/static/images/hot.png" class="hot">
@@ -261,7 +265,7 @@ use frontend\widgets\MenuView;
                 <div class="game-live-title">
                     <div class="title clearfix">
                         <span class="font js_nav-list"><img src="/static/images/game.png">热门游戏</span>
-                        <a href="<?=Url::to(['game/index'])?>" class="more">更多>></a>
+                        <span class="font js_nav-list index_sub_tab"><img src="/static/images/game_gray.png">星秀专场</span>
                     </div>
                     <div class="game-live-list js_news-deta">
                         <ul class="clearfix">
@@ -283,7 +287,23 @@ use frontend\widgets\MenuView;
                             <?php }?>
                         </ul>
                     </div>
-
+                    <div class="game-live-list js_news-deta">
+                        <?php foreach ($hot_show_live as $h){?>
+                            <li>
+                                <a href="<?= Url::to(['live/view','id'=>$h['id']])?>">
+                                    <div class="play-ico">
+                                        <img src="<?= $h['snapshot']?>">
+                                        <i class="play-icon"></i>
+                                    </div>
+                                    <div class="game-live-txt clearfix">
+                                        <p class="game-title"><?= $h['title']?></p>
+                                        <p class="game-type"><?= $h['l_cname']?></p>
+                                        <p class="game-name"><?= $h['anchor_name']?></p>
+                                        <p class="game-hot"><img src="/static/images/hot.png"><?= $h['hn']?></p>
+                                    </div>
+                                </a>
+                            </li>
+                        <?php }?></div>
                 </div>
             </div>
             <div class="level-box">
@@ -330,6 +350,9 @@ use frontend\widgets\MenuView;
                     <div class="min-cont">
                         <div class="title clearfix">
                             <span class="font"><img src="/static/images/video.png">精彩视频</span>
+                            <a href="<?=Url::to(['live/index','cat'=>'jdqs'])?>"> <span class="font sub_tab" num="1" style="line-height:26px;width: 90px">绝地求生</span></a>
+                            <a href="<?=Url::to(['live/index','cat'=>'dnf'])?>"> <span class="font sub_tab" num="1" style="line-height:26px;width: 90px">DNF</span></a>
+                            <a href="<?=Url::to(['live/index','cat'=>'wzry'])?>"> <span class="font sub_tab" num="1" style="line-height:26px;width: 90px">王者荣耀</span></a>
                             <a href="<?=Url::to(['live/index'])?>" class="more">更多>></a>
                         </div>
                         <div class="game-live-list">
@@ -364,6 +387,12 @@ use frontend\widgets\MenuView;
                         <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>
                     </div>
                 </div>
+            </div>
+            <div class="banner3">
+                <?php $ad = Options::getAdByName('index_right_1')?>
+                <a href="<?=$ad->link?>" target="<?=$ad->target?>" title="<?=$ad->desc?>">
+                    <img src="<?=$ad->ad?>" alt="<?=$ad->desc?>" >
+                </a>
             </div>
             <div class="banner3">
                 <?php $ad = Options::getAdByName('index_right_1')?>
@@ -422,10 +451,14 @@ use frontend\widgets\MenuView;
 
              </div>
              <?php foreach ($hot_cate as $hc){?>
+                 <?php $cates = Lcategory::find()->where(['parent_id'=>$hc['id'],'is_hot'=>1])->asArray()->all()?>
              <div class="index-live-box">
                  <div class="index-live-box-cont">
                  <div class="title clearfix">
                      <span class="font"><?=$hc['name']?></span>
+                     <?php foreach ($cates as $c){?>
+                     <a href="<?=Url::to(['live/index','cat'=>$c['alias']])?>"> <span class="font sub_tab" num="1"><?=$c['name']?></span></a>
+                    <?php }?>
                      <a href="<?=Url::to(['game/index','cat'=>$hc['alias']])?>" class="more">更多>></a>
                  </div>
                  <div class="video-type-list show-type-list">
@@ -458,7 +491,6 @@ use frontend\widgets\MenuView;
          </div>
      </div>
     <div class="section05">
-        <div class="content">
             <?php echo $this->renderFile('@app/views/layouts/footer.php');?>
         </div>
     </div>

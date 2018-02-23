@@ -52,6 +52,13 @@ $this->params['breadcrumbs'][] = yii::t('app', 'LCategory');
                             ])*/
                         ],
                         [
+                            'attribute' => 'is_hot',
+                            'label' => '是否热门',
+                            'value' => function ($model, $key, $index, $column) {
+                                return $model['is_hot']?'是':'否';
+                            }
+                        ],
+                        [
                             'attribute' => 'alias',
                             'label' => yii::t('app', 'Alias'),
                         ],

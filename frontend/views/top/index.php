@@ -45,7 +45,7 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
                 <td colspan="3" style="padding-left: 180px !important;">主播</td>
                 <td>平台</td>
                 <td>分类</td>
-                <td>热度</td>
+                <td>人气值</td>
             </tr>
             <?php foreach ($list as $i=>$model){?>
             <tr>

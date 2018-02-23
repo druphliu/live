@@ -34,6 +34,7 @@ class ActivityListView extends \yii\widgets\ListView
                 <div class=\"activity-list-text\">
                     <p>【活动标题】{title}</p>
                     <p>【活动时间】{start} 至 {end}</p>
+                    <p>【活动地址】{addr}</p>
                     <div>
                         {summary}...
                     </div>
@@ -58,9 +59,9 @@ class ActivityListView extends \yii\widgets\ListView
             }
             $tag='';
             $articleUrl = Url::to(['activity/view', 'id' => $model->id]);
-            $summary = StringHelper::truncate($model->summary, 70);
+            $summary = StringHelper::truncate($model->summary, 45);
             $title = StringHelper::truncate($model->title, 28);
-
+            $addr = $model->addr;
             return str_replace([
                 '{article_url}',
                 '{img_url}',
@@ -68,13 +69,15 @@ class ActivityListView extends \yii\widgets\ListView
                 '{summary}',
                 '{start}',
                 '{end}',
+                '{addr}'
             ], [
                 $articleUrl,
                 $imgUrl,
                 $title,
                 $summary,
                 date('Y年-m月-d日', $model->started_at),
-                date('Y年-m月-d日', $model->ended_at)
+                date('Y年-m月-d日', $model->ended_at),
+                $addr
             ], $this->template);
         };
     }

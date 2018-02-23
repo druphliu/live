@@ -22,6 +22,7 @@ class ShowController extends Controller
 
     public function actionIndex($cat = '')
     {
+        $category=[];
         if(!$cat){
             $cat='show';
         }
@@ -60,7 +61,8 @@ class ShowController extends Controller
                 'pageSize' => 21,
             ],
         ]);
-        return $this->render('index', ['dataProvider' => $dataProvider, 'type' => (!empty($cat) ? $catname : yii::t('frontend', 'Latest Anchor'))]);
+        $hot = Anchor::find()->where($where)->andWhere(['flag_special_recommend'=>1])->asArray()->limit(6)->all();
+        return $this->render('index', ['category'=>$category,'hot'=>$hot,'dataProvider' => $dataProvider, 'type' => (!empty($cat) ? $catname : yii::t('frontend', 'Latest Anchor'))]);
     }
 
     /**

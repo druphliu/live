@@ -28,19 +28,46 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 ?>
 <div class="video-type-box margin-top">
     <div class="content clearfix video-content">
-        <div class="game-list-img">
-            <?php $ad = Options::getAdByName('game_index_1')?>
-            <a href="<?=$ad->link?>" target="<?=$ad->target?>" title="<?=$ad->desc?>">
-                <img src="<?=$ad->ad?>" alt="<?=$ad->desc?>" >
-            </a>
-            <?php $ad = Options::getAdByName('game_index_2')?>
-            <a href="<?=$ad->link?>" target="<?=$ad->target?>" title="<?=$ad->desc?>">
-                <img src="<?=$ad->ad?>" alt="<?=$ad->desc?>" >
-            </a>
+        <div class="video-type-left show-type-box">
+            <div class="title clearfix">
+                <span class="font">人气推荐</span>
+            </div>
+            <div class="video-type-list show-type-list" style="height: 265px;overflow: hidden">
+                <div class="game-live-list">
+                    <ul class="clearfix">
+                        <?php foreach ($hot as $h){?>
+                            <li>
+                                <b><?=$h['platfrom_name']?></b>
+                                <a href="<?=Url::to(['game/view', 'id' => $h['id']])?>" target='_blank'>
+                                    <div class="play-ico">
+                                        <img src="<?=$h['snapshot']?>">
+                                        <i class="play-icon"></i>
+                                    </div>
+                                    <div class="game-live-txt clearfix">
+                                        <p class="game-title"><?=$h['title']?></p>
+                                        <p class="game-type"><?=$h['l_cname']?></p>
+                                        <p class="game-name"><?=$h['platfrom_name']?></p>
+                                        <p class="game-hot"><img src="/static/images/hot.png"><?=$h['hn']?></p>
+                                    </div>
+                                </a>
+                            </li>
+                        <?php }?>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="video-type-left show-type-box">
             <div class="title clearfix">
                 <span class="font"><img src="/static/images/game.png"><?=$type?></span>
+                <?php if(!$category||($category && $category['parent_id']==0)){
+                    $parent_id = $category ? $category['id'] : 0;
+                    $cates = \frontend\models\Lcategory::find()->where(['parent_id'=>$parent_id])->andWhere(['is_hot'=>1])->asArray()->all();
+                }else{
+                    $cates = \frontend\models\Lcategory::find()->where(['parent_id'=>$category['parent_id']])->andWhere('id<>'.$category['id'])->asArray()->all();
+                }?>
+                <?php foreach ($cates as $ce){?>
+                    <a href="<?=Url::to(['game/index','cat'=>$ce['alias']])?>"> <span class="font sub_tab" num="1"><?=$ce['name']?></span></a>
+                <?php }?>
             </div>
             <div class="video-type-list show-type-list">
                 <?= AnchorListView::widget([
