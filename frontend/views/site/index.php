@@ -101,148 +101,39 @@ use frontend\widgets\MenuView;
                         </div>
                     </div>
                     <div class="">
-
-                        <div class="star-livebox-lef clearfix">
-                            <div class="sec bnspic">
-                                <div class="big_pic">
-                                    <ul>
-                                        <li class="on">
-                                            <a href="<?= Url::to(['live/view','id'=>$live[0]['id']])?>"><img src="<?=$live[0]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[1]['id']])?>"><img src="<?=$live[1]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[2]['id']])?>"><img src="<?=$live[2]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[3]['id']])?>"><img src="<?=$live[3]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[4]['id']])?>"><img src="<?=$live[4]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="small_pic clearfix">
-                                    <ul>
-                                        <li class="on">
-                                            <a href="<?= Url::to(['live/view','id'=>$live[0]['id']])?>"><img src="<?=$live[0]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[1]['id']])?>"><img src="<?=$live[1]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[2]['id']])?>"><img src="<?=$live[2]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[3]['id']])?>"><img src="<?=$live[3]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[4]['id']])?>"><img src="<?=$live[4]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="star-livebox-rig clearfix">
-                            <div class="sec bnspic">
-                                <div class="big_rigpic">
-                                    <ul>
-                                        <li class="on">
-                                            <a href="<?= Url::to(['live/view','id'=>$live[5]['id']])?>"><img src="<?=$live[5]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[6]['id']])?>"><img src="<?=$live[6]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[7]['id']])?>"><img src="<?=$live[7]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[8]['id']])?>"><img src="<?=$live[8]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[9]['id']])?>"><img src="<?=$live[9]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="small_rigpic clearfix">
-                                    <ul>
-                                        <li class="on">
-                                            <a href="<?= Url::to(['live/view','id'=>$live[5]['id']])?>"><img src="<?=$live[5]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[6]['id']])?>"><img src="<?=$live[6]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[7]['id']])?>"><img src="<?=$live[7]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[8]['id']])?>"><img src="<?=$live[8]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="<?= Url::to(['live/view','id'=>$live[9]['id']])?>"><img src="<?=$live[9]['avatar']?>"/></a>
-                                            <div class="live-lef">
-                                                <label class="tips"><i></i>直播中1</label>
-                                            </div>
-                                        </li>
-                                    </ul>
+                        <div class="star_box">
+                            <div class="star-bd-tabox">
+                                <div class="star-bd">
+                                    <div class="star-content">
+                                        <div class="star-wrap">
+                                            <ul class="star-list clear_fix">
+                                                <?php foreach ($live as $i=>$l){?>
+                                                <li class="star-item <?php if($i==0){?>active<?php }?>">
+                                                    <div class="pic">
+                                                        <a href="<?= Url::to(['live/view','id'=>$l['id']])?>">
+                                                            <img src="<?=$l['avatar']?>">
+                                                        </a>
+                                                    </div>
+                                                    <i class="live-flag"><span class="live-icon"></span>直播中</i>
+                                                </li>
+                                                <?php if($i==5){break;}}?>
+                                            </ul>
+                                        </div>
+                                        <div class="star-wrap">
+                                            <ul class="star-list clear_fix">
+                                                <?php foreach ($live as $i=>$l){if($i>5){?>
+                                                    <li class="star-item <?php if($i==6){?>active<?php }?>">
+                                                        <div class="pic">
+                                                            <a href="<?= Url::to(['live/view','id'=>$l['id']])?>">
+                                                                <img src="<?=$l['avatar']?>">
+                                                            </a>
+                                                        </div>
+                                                        <i class="live-flag"><span class="live-icon"></span>直播中</i>
+                                                    </li>
+                                                    <?php }}?>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -205,7 +205,7 @@ class SiteController extends Controller
             ->orderBy('id desc')
             ->limit(6)->asArray()->all();
         $category = Lcategory::find()->where(['is_hot'=>1])->andWhere('parent_id<>0')->orderBy('sort asc')->asArray()->limit(10)->all();
-        $live = Anchor::find()->where(['flag_headline'=>1])->limit(10)->asArray()->all();
+        $live = Anchor::find()->where(['flag_headline'=>1])->limit(12)->asArray()->all();
         $activity = Activity::find()->where(['flag_headline'=>1])->limit(4)->asArray()->all();
         $hot_live = Anchor::find()->where(['flag_special_recommend'=>1])->andWhere('l_cid not in (5,104,105,106,107,108,203)')->limit(6)->asArray()->all();
         $hot_show_live = Anchor::find()->where(['flag_special_recommend'=>1])->andWhere('l_cid in (5,104,105,106,107,108,203)')->limit(6)->asArray()->all();

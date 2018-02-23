@@ -108,6 +108,7 @@ return [
                     ],
                     'js' => [
                         'a' => 'static/js/responsiveslides.min.js',
+                        'b' => 'static/js/pic.js',
                     ]
                 ],
                 frontend\assets\NewsAsset::className() => [

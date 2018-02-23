@@ -39,28 +39,43 @@ $(function(){
         $(".left-menu-min").hide();
         $(".left-menu").show();
         $(".show-type-box").css({
-            "width":'88%',
-            "margin-left":'250px'
+            "width":'86%',
+            "margin-left":'260px'
         })
         $(".show-type-list .game-live-list li").css({
             "width":'305px'
         })
         $(".game-list-img").css({
-            "margin-left":'250px'
+            "margin-left":'260px'
         })
     })
-    $(".small_pic li").mouseover(function(){
-        $(this).siblings().removeClass("on");
-        $(this).addClass("on");
-        var preNumber=$(this).prevAll().size()+1;
-        $(".big_pic li").removeClass("on");
-        $(".big_pic li:nth-child("+preNumber+")").addClass("on");
+    // $(".small_pic li").mouseover(function(){
+    //     $(this).siblings().removeClass("on");
+    //     $(this).addClass("on");
+    //     var preNumber=$(this).prevAll().size()+1;
+    //     $(".big_pic li").removeClass("on");
+    //     $(".big_pic li:nth-child("+preNumber+")").addClass("on");
+    // });
+    // $(".small_rigpic li").mouseover(function(){
+    //     $(this).siblings().removeClass("on");
+    //     $(this).addClass("on");
+    //     var preNumber=$(this).prevAll().size()+1;
+    //     $(".big_rigpic li").removeClass("on");
+    //     $(".big_rigpic li:nth-child("+preNumber+")").addClass("on");
+    // });
+    $('.increase-btn').click(function(){
+        var num = parseInt($('.num-input').val());
+        num+=1;
+        $('.num-input').val(num);
+        $('.decrease-btn').removeClass('disabled');
     });
-    $(".small_rigpic li").mouseover(function(){
-        $(this).siblings().removeClass("on");
-        $(this).addClass("on");
-        var preNumber=$(this).prevAll().size()+1;
-        $(".big_rigpic li").removeClass("on");
-        $(".big_rigpic li:nth-child("+preNumber+")").addClass("on");
-    });
+    $('.decrease-btn').click(function(){
+        var num = parseInt($('.num-input').val());
+        num-=1;
+        $('.num-input').val(num);
+        if(num==1){
+            $('.decrease-btn').addClass('disabled');
+        }
+
+    })
 });
