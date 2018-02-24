@@ -79,7 +79,9 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 </div>
 <?php JsBlock::begin(); ?>
 <script type="text/javascript">
+$('.buynow').click(function () {
 
+})
 
 </script>
 <?php JsBlock::end(); ?>

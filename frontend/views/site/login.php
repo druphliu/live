@@ -19,29 +19,21 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 $this->title = yii::t('app', 'Login') . '-' . yii::$app->feehi->website_title;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="content-wrap">
-    <div class="site-login article-content" style="width:500px;margin: 0 auto;text-align: center">
-        <h1><?= Html::encode($this->title) ?></h1>
-        <style>
-            label {
-                float: left;
-                width: 103px
-            }
+<div class="content-wrap ">
+    <div class="site-login article-content" style="margin-top: 77px">
+        <div class="title-line"><span class="tit" style="font-size: 38px;">登录</span></div>
 
-            div.row input{
-                margin-right: 110px;
-            }
-        </style>
 
-        <div class="row">
-            <div class="col-lg-5">
+        <div class="row form-login">
+            <div class="col-md-3"></div>
+            <div class="col align-self-center">
                 <?php $form = ActiveForm::begin(['id' => 'form-login']); ?>
 
                 <?= $form->field($model, 'username', ['template' => "<div style='position:relative'>{label}{input}\n{error}\n{hint}</div>"])->textInput(['autofocus' => true]) ?>
 
                 <?= $form->field($model, 'password', ['template' => "<div style='position:relative'>{label}{input}\n{error}\n{hint}</div>"])->passwordInput() ?>
 
-                <?= $form->field($model, 'rememberMe', ['labelOptions'=>['style'=>'width:117px;margin-left:79px;position:relative;left:34px;top:3px']])->checkbox(['style'=>'margin-right:0px;position:relative;top:-2px'])?>
+                <?= $form->field($model, 'rememberMe', ['labelOptions'=>['style'=>'width:117px;position:relative;top:3px']])->checkbox(['style'=>'margin-right:0px;position:relative;top:-2px'])?>
 
                 <div class="form-group" style="color:#999;margin-right: 120px;">
                     <?= yii::t('frontend', 'If you forgot your password you can') ?> <?= Html::a(yii::t('frontend', 'reset it'), ['site/request-password-reset']) ?>
@@ -53,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?php ActiveForm::end(); ?>
             </div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 </div>

@@ -566,11 +566,17 @@ a{
 	width: 920px;
 	height: 112px;
 }
-.banner3,.activity-box{
+.activity-box{
 	width: 270px;
-	height: 331px;
+	height: 352px;
 	float: right;
 	margin-top: 30px;
+}
+.banner3{
+	width: 270px;
+	height: 353px;
+	float: right;
+	margin-top: 15px;
 }
 .banner3 img,.banner2 img{
 	width: 100%;
@@ -1645,7 +1651,7 @@ a{
 	margin: 22px auto;
 	margin-top: 77px;
 }
-.shop-box-top img,.shop-floor-list img{
+.shop-box-top img,.shop-floor-list img,.daohang-floor-list img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -2026,4 +2032,39 @@ a{
 }
 .goods-ctrl-panel .gift-ctrl-ctnr {
 	margin-top: 26px;
+}
+.title-line {
+	width: 980px;
+	height: 28px;
+	margin: 0 auto;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 28px;
+	text-align: center;
+}
+ .title-line .tit {
+	height: 56px;
+	line-height: 56px;
+	margin: 0 auto;
+	padding: 0 20px;
+	font-size: 40px;
+	background: #fff;
+	text-align: center;
+}
+ .form-login{
+    width: 980px;
+	margin: 0 auto;
+}
+ .daohang-floor-img{
+	 width: 200px;
+	 height: 90px;
+ }
+ .daohang-floor-list li{
+	 float: left;
+	 width: 200px;
+	 margin-top: 20px;
+	 margin-left: 20px;
+ }
+.daohang-floor-list{
+	margin-left: -20px;
+	margin-bottom: 3rem;
 }

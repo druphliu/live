@@ -272,10 +272,10 @@ use frontend\widgets\MenuView;
                             <span class="font"><img src="/static/images/welfare.png">新上福利</span>
                             <a href="<?=Url::to(['shop/index'])?>" class="more">更多>></a>
                         </div>
-                        <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>
-                        <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>
-                        <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>
-                        <div class="welfare-img"><a href="#"><img src="/static/images/img5.png"></a></div>
+                        <?php foreach ($goods as $good){?>
+                        <div class="welfare-img"><a href="<?=Url::to(['shop/view','id'=>$good['id']])?>"><img src="<?=$good['thumb']?>"></a></div>
+                        <?php }?>
+
                     </div>
                 </div>
             </div>

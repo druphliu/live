@@ -20,18 +20,20 @@ $this->registerMetaTag(['keywords' => yii::$app->feehi->seo_keywords]);
 $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 ?>
 <div class="content-wrap">
-    <div class="site-signup article-content" style="width:500px; margin: 0 auto">
-        <h1><?= Html::encode($this->title) ?></h1>
+    <div class="site-signup article-content" style="margin-top: 77px">
+        <div class="title-line"><span class="tit" style="font-size: 38px;">注册</span></div>
         <style>
             label {
                 float: left;
                 width: 100px
             }
         </style>
-        <p><?= yii::t('frontend', 'Please fill out the following fields to signup') ?>:</p>
+
 
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-md-3"></div>
+            <div class="col align-self-center">
+                <p><?= yii::t('frontend', 'Please fill out the following fields to signup') ?>:</p>
                 <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
                 <?= $form->field($model, 'username', ['template' => "<div style='position:relative'>{label}{input}\n{error}\n{hint}</div>"])->textInput(['autofocus' => true]) ?>
@@ -46,6 +48,7 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 
                 <?php ActiveForm::end(); ?>
             </div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 </div>

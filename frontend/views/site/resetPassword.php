@@ -21,7 +21,7 @@ $this->registerMetaTag(['description' => yii::$app->feehi->seo_description]);
 ?>
 <div class="content-wrap">
     <div class="site-signup article-content" style="width:100%; margin: 0 auto">
-        <h1><?= Html::encode($this->title) ?></h1>
+        <div class="title-line"><span class="tit" style="font-size: 38px;"><?= Html::encode($this->title) ?></span></div>
         <style>
             label {
                 float: left;

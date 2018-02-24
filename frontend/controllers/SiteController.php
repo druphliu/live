@@ -11,6 +11,7 @@ namespace frontend\controllers;
 use frontend\models\Activity;
 use frontend\models\Anchor;
 use frontend\models\Article;
+use frontend\models\Goods;
 use frontend\models\Lcategory;
 use frontend\models\Video;
 use Yii;
@@ -212,9 +213,10 @@ class SiteController extends Controller
         $top = Anchor::find()->where(['status' => Anchor::ANCHOR_PUBLISHED])->limit(9)->all();
         //hot category
         $hot_cate = Lcategory::find()->where(['parent_id'=>0])->asArray()->all();
-        $top_video = Video::find()->where(['flag_headline'=>1])->andWhere('thumb<>""')->limit(9)->orderBy("sort asc")->asArray()->all();
+        $top_video = Video::find()->where(['flag_headline'=>1])->limit(9)->orderBy("sort asc")->asArray()->all();
+        $goods = Goods::find()->where(['flag_headline'=>1])->limit(4)->orderBy("sort asc")->asArray()->all();
         return $this->renderPartial('index',['news'=>$list,'category'=>$category,'live'=>$live,'activity'=>$activity,
-            'hot_live'=>$hot_live,'top'=>$top,'hot_cate'=>$hot_cate,'top_video'=>$top_video,'hot_show_live'=>$hot_show_live]);
+            'hot_live'=>$hot_live,'top'=>$top,'hot_cate'=>$hot_cate,'top_video'=>$top_video,'hot_show_live'=>$hot_show_live,'goods'=>$goods]);
     }
 
     /**
